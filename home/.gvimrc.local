@@ -2,7 +2,7 @@
 color solarized
 
 " Set font
-set guifont=Monaco\ 9
+set guifont=Monaco:h10
 
 " Turn of scroll bars
 set guioptions-=L
