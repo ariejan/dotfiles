@@ -1,0 +1,12 @@
+" Set colors
+color solarized
+
+" Set font
+set guifont=Monaco\ 9
+
+" Turn of scroll bars
+set guioptions-=L
+set guioptions-=r
+
+" Clear search highlighting with <ESC>
+nnoremap <esc> :noh<return><esc>
