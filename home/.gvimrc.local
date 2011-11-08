@@ -1,6 +1,9 @@
 " Set colors
 color solarized
 
+" Map :W to :w
+cmap W w
+
 " Set font
 set guifont=Monaco:h10
 
