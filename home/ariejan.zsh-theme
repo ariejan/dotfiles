@@ -2,13 +2,14 @@
 local user='%{$fg[magenta]%}%n@%{$fg[magenta]%}%m%{$reset_color%}'
 local pwd='%{$fg[blue]%}%~%{$reset_color%}'
 local rvm='%{$fg[green]%}‹$(rvm-prompt i v g)›%{$reset_color%}'
-local return_code='%(?..%{$fg[red]%}%? ↵%{$reset_color%})'
-local git_branch='%{$reset_color%}$(git_prompt_info)%{$reset_color%}'
+local return_code='%(?..%{$fg[red]%}%? ↵ %{$reset_color%})'
+local git_branch='%{$reset_color%}$(git_prompt_info)$(git_prompt_ahead)%{$reset_color%}'
 
 ZSH_THEME_GIT_PROMPT_PREFIX="%{$fg[green]%}"
 ZSH_THEME_GIT_PROMPT_SUFFIX="%{$reset_color%}"
-ZSH_THEME_GIT_PROMPT_DIRTY=" ⌘"
+ZSH_THEME_GIT_PROMPT_DIRTY=" %{$fg[blue]%}⌘"
 ZSH_THEME_GIT_PROMPT_CLEAN=""
+ZSH_THEME_GIT_PROMPT_AHEAD=" %{$fg[blue]%}⇧"
 
 ZSH_THEME_GIT_PROMPT_ADDED="%{$fg[green]%} ✚"
 ZSH_THEME_GIT_PROMPT_MODIFIED="%{$fg[blue]%} ✹"
