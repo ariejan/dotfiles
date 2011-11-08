@@ -36,6 +36,11 @@ source $ZSH/oh-my-zsh.sh
 
 unsetopt auto_name_dirs
 
+# Easily delete removed files from git index
+grm() {
+  git status | grep "deleted:" | awk '{print $3}' | xargs git rm --ignore-unmatch
+}
+
 if [[ -s ~/.rvm/scripts/rvm ]] ; then
   source ~/.rvm/scripts/rvm ;
   rvm use default > /dev/null
