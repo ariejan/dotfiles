@@ -27,4 +27,4 @@
 [branch]
   autosetuprebase = always
 [core]
-  quotepath = false
+	quotepath = false
