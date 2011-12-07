@@ -1,5 +1,5 @@
 [user]
-  name = Ariejan de Vroom
+	name = Ariejan de Vroom
   email = ariejan@ariejan.net
 [alias]
   co = checkout
@@ -28,3 +28,5 @@
   autosetuprebase = always
 [core]
 	quotepath = false
+[merge]
+	ff = false
