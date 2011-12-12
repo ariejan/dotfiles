@@ -67,3 +67,6 @@ ZSH_THEME_GIT_PROMPT_UNTRACKED="%{$fg[cyan]%} ✭"
 PROMPT="${user} ${pwd} $ "
 # RPROMPT="${return_code} ${git_branch} ${rvm}"
 RPROMPT="${return_code} ${git_branch} ${rbenv}"
+
+# Hub
+function git(){hub "$@"}
