@@ -1,6 +1,6 @@
 [user]
 	name = Ariejan de Vroom
-  email = ariejan@ariejan.net
+	email = ariejan@ariejan.net
 [alias]
   co = checkout
   lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr)%Creset' --abbrev-commit --date=relative
@@ -30,3 +30,8 @@
 	quotepath = false
 [merge]
 	ff = false
+[mergetool]
+	keepBackup = true
+[github]
+	user = ariejan
+  token = !security 2>&1 >/dev/null find-generic-password -gs github.token | ruby -e 'print $1 if STDIN.gets =~ /^password: \\\"(.*)\\\"$/'

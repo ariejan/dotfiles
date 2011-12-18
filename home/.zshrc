@@ -40,7 +40,7 @@ grm() {
 }
 
 # rbenv
-PATH="$HOME/.rbenv/bin:$PATH"
+PATH="$HOME/.rbenv/bin:/usr/local/bin:$PATH"
 eval "$(rbenv init -)"
 
 ###
