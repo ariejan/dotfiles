@@ -26,7 +26,7 @@ COMPLETION_WAITING_DOTS="true"
 
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(git brew bundler gem git rails3 redis-cli)
+plugins=(git brew bundler gem git rails3 redis-cli nyan)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -67,6 +67,3 @@ ZSH_THEME_GIT_PROMPT_UNTRACKED="%{$fg[cyan]%} ✭"
 PROMPT="${user} ${pwd} $ "
 # RPROMPT="${return_code} ${git_branch} ${rvm}"
 RPROMPT="${return_code} ${git_branch} ${rbenv}"
-
-# Hub
-function git(){hub "$@"}
