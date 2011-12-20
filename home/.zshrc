@@ -65,5 +65,9 @@ ZSH_THEME_GIT_PROMPT_UNMERGED="%{$fg[yellow]%} ═"
 ZSH_THEME_GIT_PROMPT_UNTRACKED="%{$fg[cyan]%} ✭"
 
 PROMPT="${user} ${pwd} $ "
-# RPROMPT="${return_code} ${git_branch} ${rvm}"
-RPROMPT="${return_code} ${git_branch} ${rbenv}"
+
+if [[ -s "$HOME/.rvm/scripts/rvm" ]] then
+  RPROMPT="${return_code} ${git_branch} ${rvm}"
+else
+  RPROMPT="${return_code} ${git_branch} ${rbenv}"
+fi
