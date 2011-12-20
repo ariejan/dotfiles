@@ -46,7 +46,7 @@ eval "$(rbenv init -)"
 ###
 local user='%{$fg[magenta]%}%n@%{$fg[magenta]%}%m%{$reset_color%}'
 local pwd='%{$fg[blue]%}%~%{$reset_color%}'
-# local rvm='%{$fg[green]%}‹$(rvm-prompt i v g)›%{$reset_color%}'
+local rvm='%{$fg[green]%}‹$(rvm-prompt i v g)›%{$reset_color%}'
 local rbenv='%{$fg[green]%}‹$(rbenv version-name)›%{$reset_color%}'
 local return_code='%(?..%{$fg[red]%}%? ↵ %{$reset_color%})'
 local git_branch='%{$reset_color%}$(git_prompt_info)$(git_prompt_ahead)%{$reset_color%}'
