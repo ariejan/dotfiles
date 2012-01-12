@@ -1,7 +1,8 @@
 # Path to your oh-my-zsh configuration.
 ZSH=$HOME/.oh-my-zsh
 
-alias m="mvim"
+# Map vi to vim, just in case
+alias vi=vim
 
 # Set name of the theme to load.
 # Look in ~/.oh-my-zsh/themes/
