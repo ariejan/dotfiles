@@ -22,6 +22,9 @@ set history=100
 set wildmenu
 set wildmode=list:longest
 
+" Show line numbers - always
+set number
+
 " Syntax highlighting
 syntax on
 set showmatch "matchin braces
