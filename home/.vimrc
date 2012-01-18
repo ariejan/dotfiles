@@ -87,7 +87,6 @@ set si " Smart indent
 
 " Remove trailing whitespace from code files on save
 function! StripTrailingWhitespace()
-
   " store current cursor location
   silent exe "normal ma<CR>"
   " store the current search value
@@ -101,9 +100,7 @@ function! StripTrailingWhitespace()
   silent exe "normal `a<CR>"
   " restore the search value
   let @/ = saved_search
-
 endfunction
-
 
 " Autocommands
 if has('autocmd')
@@ -136,4 +133,3 @@ endif
 " Set open new windows below/to the right
 set sb
 set spr
-
