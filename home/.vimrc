@@ -22,6 +22,12 @@ set history=100
 set wildmenu
 set wildmode=list:longest
 
+" Set 256 color support
+set t_Co=256
+
+" Colorscheme
+colorscheme grb256
+
 " Syntax highlighting
 syntax on
 set showmatch "matchin braces
