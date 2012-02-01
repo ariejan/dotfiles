@@ -43,34 +43,34 @@ grm() {
 # rbenv
 
 ###
-local user='%{$fg[magenta]%}%n@%{$fg[magenta]%}%m%{$reset_color%}'
+local user='%{$fg[blue]%}%n@%{$fg[blue]%}%m%{$reset_color%}'
 local pwd='%{$fg[blue]%}%~%{$reset_color%}'
 local return_code='%(?..%{$fg[red]%}%? ↵ %{$reset_color%})'
 local git_branch='%{$reset_color%}$(git_prompt_info)$(git_prompt_ahead)%{$reset_color%}'
 
-ZSH_THEME_GIT_PROMPT_PREFIX="%{$fg[green]%}"
+ZSH_THEME_GIT_PROMPT_PREFIX="%{$fg[yellow]%}"
 ZSH_THEME_GIT_PROMPT_SUFFIX="%{$reset_color%}"
-ZSH_THEME_GIT_PROMPT_DIRTY=" %{$fg[blue]%}⌘"
+ZSH_THEME_GIT_PROMPT_DIRTY=" %{$fg[red]%}⌘"
 ZSH_THEME_GIT_PROMPT_CLEAN=""
-ZSH_THEME_GIT_PROMPT_AHEAD=" %{$fg[blue]%}⇧"
+ZSH_THEME_GIT_PROMPT_AHEAD=" %{$fg[red]%}⇧"
 
-ZSH_THEME_GIT_PROMPT_ADDED="%{$fg[green]%} ✚"
-ZSH_THEME_GIT_PROMPT_MODIFIED="%{$fg[blue]%} ✹"
+ZSH_THEME_GIT_PROMPT_ADDED="%{$fg[red]%} ✚"
+ZSH_THEME_GIT_PROMPT_MODIFIED="%{$fg[red]%} ✹"
 ZSH_THEME_GIT_PROMPT_DELETED="%{$fg[red]%} ✖"
-ZSH_THEME_GIT_PROMPT_RENAMED="%{$fg[magenta]%} ➜"
-ZSH_THEME_GIT_PROMPT_UNMERGED="%{$fg[yellow]%} ═"
-ZSH_THEME_GIT_PROMPT_UNTRACKED="%{$fg[cyan]%} ✭"
+ZSH_THEME_GIT_PROMPT_RENAMED="%{$fg[red]%} ➜"
+ZSH_THEME_GIT_PROMPT_UNMERGED="%{$fg[red]%} ═"
+ZSH_THEME_GIT_PROMPT_UNTRACKED="%{$fg[red]%} ✭"
 
 PROMPT="${user} ${pwd} $ "
 
 if [[ -s ~/.rvm/scripts/rvm ]] ; then
-    local rvm='%{$fg[green]%}‹$(rvm-prompt i v g)›%{$reset_color%}'
+    local rvm='%{$fg[blue]%}‹$(rvm-prompt i v g)›%{$reset_color%}'
     source ~/.rvm/scripts/rvm
     rvm use default > /dev/null
     RPROMPT="${return_code} ${git_branch} ${rvm}"
 else
     PATH="$HOME/.rbenv/bin:/usr/local/bin:$PATH"
     eval "$(rbenv init -)"
-    local rbenv='%{$fg[green]%}‹$(rbenv version-name)›%{$reset_color%}'
+    local rbenv='%{$fg[blue]%}‹$(rbenv version-name)›%{$reset_color%}'
     RPROMPT="${return_code} ${git_branch} ${rbenv}"
 fi
