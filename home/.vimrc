@@ -28,8 +28,8 @@ set t_Co=256
 " Syntax highlighting
 syntax on
 set showmatch "matchin braces
-set background=light
-colorscheme solarized
+set background=dark
+colorscheme jellybeans
 
 " Intuitive backspace
 set bs=indent,eol,start
