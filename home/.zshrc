@@ -48,11 +48,13 @@ local pwd='%{$fg[blue]%}%~%{$reset_color%}'
 local return_code='%(?..%{$fg[red]%}%? ↵ %{$reset_color%})'
 local git_branch='%{$reset_color%}$(git_prompt_info)$(git_prompt_ahead)%{$reset_color%}'
 
+#   
+
 ZSH_THEME_GIT_PROMPT_PREFIX="%{$fg[yellow]%}"
 ZSH_THEME_GIT_PROMPT_SUFFIX="%{$reset_color%}"
 ZSH_THEME_GIT_PROMPT_DIRTY=" %{$fg[red]%}⌘"
 ZSH_THEME_GIT_PROMPT_CLEAN=""
-ZSH_THEME_GIT_PROMPT_AHEAD=" %{$fg[red]%}⇧"
+ZSH_THEME_GIT_PROMPT_AHEAD=" %{$fg[red]%}⭠"
 
 ZSH_THEME_GIT_PROMPT_ADDED="%{$fg[red]%} ✚"
 ZSH_THEME_GIT_PROMPT_MODIFIED="%{$fg[red]%} ✹"
