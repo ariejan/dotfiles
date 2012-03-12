@@ -1,5 +1,5 @@
-" Don't be Vi, be Vim!
 set nocompatible
+set laststatus=2
 
 " Load pathogen
 call pathogen#infect()
@@ -30,6 +30,9 @@ syntax on
 set showmatch "matchin braces
 set background=dark
 colorscheme jellybeans
+
+" Font see dotfiles/data
+set guifont=Bitstream\ Vera\ Sans\ Mono\ for\ Powerline:h11
 
 " Intuitive backspace
 set bs=indent,eol,start
@@ -131,3 +134,6 @@ endif
 " Set open new windows below/to the right
 set sb
 set spr
+
+" Powerline
+let g:Powerline_symbols = 'fancy'
