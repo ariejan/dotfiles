@@ -21,6 +21,7 @@ set history=100
 " Make file/command completion useful
 set wildmenu
 set wildmode=list:longest
+set wildignore+=tmp,.bundle,.sass-cache,.git,.svn,.hg
 
 " Set 256 color support
 set t_Co=256
@@ -32,7 +33,7 @@ set background=dark
 colorscheme jellybeans
 
 " Font see dotfiles/data
-set guifont=Bitstream\ Vera\ Sans\ Mono\ for\ Powerline:h11
+set guifont=Menlo\ for\ Powerline:h12
 
 " Intuitive backspace
 set bs=indent,eol,start
