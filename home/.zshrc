@@ -66,7 +66,7 @@ ZSH_THEME_GIT_PROMPT_UNTRACKED="%{$fg[red]%} ✭"
 PROMPT="${user} ${pwd} $ "
 
 if [[ -s ~/.rvm/scripts/rvm ]] ; then
-    local rvm='%{$fg[blue]%}‹$(rvm-prompt i v g)›%{$reset_color%}'
+    local rvm='%{$fg[blue]%}‹$(rvm-prompt i v p g)›%{$reset_color%}'
     source ~/.rvm/scripts/rvm
     rvm use default > /dev/null
     RPROMPT="${return_code} ${git_branch} ${rvm}"
@@ -76,3 +76,5 @@ else
     local rbenv='%{$fg[blue]%}‹$(rbenv version-name)›%{$reset_color%}'
     RPROMPT="${return_code} ${git_branch} ${rbenv}"
 fi
+
+PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
