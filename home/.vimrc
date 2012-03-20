@@ -11,6 +11,7 @@ set encoding=utf-8
 
 " Highlight the cursor line
 set cursorline
+set cursorcolumn
 
 " Automatically update changes on getting focus
 set autoread
