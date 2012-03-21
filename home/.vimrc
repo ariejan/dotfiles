@@ -6,6 +6,10 @@ call pathogen#infect()
 " Load helptags
 call pathogen#helptags()
 
+if !empty($MY_RUBY_HOME)
+  let g:ruby_path = join(split(glob($MY_RUBY_HOME.'/lib/ruby/*.*')."\n".glob($MY_RUBY_HOME.'/lib/rubysite_ruby/*'),"\n"),',')
+endif
+
 " Always work with utf-8
 set encoding=utf-8
 
