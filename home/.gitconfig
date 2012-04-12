@@ -28,6 +28,7 @@
   autosetuprebase = always
 [core]
 	quotepath = false
+	excludesfile = /Users/ariejan/.gitignore_global
 [merge]
 	ff = false
 [mergetool]
@@ -35,3 +36,9 @@
 [github]
 	user = ariejan
   token = !security 2>&1 >/dev/null find-generic-password -gs github.token | ruby -e 'print $1 if STDIN.gets =~ /^password: \\\"(.*)\\\"$/'
+[difftool "sourcetree"]
+	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
+	path = 
+[mergetool "sourcetree"]
+	cmd = /Applications/SourceTree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
+	trustExitCode = true
