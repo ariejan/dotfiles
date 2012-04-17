@@ -45,11 +45,11 @@ grm() {
 ###
 local user='%{$fg[blue]%}%n@%{$fg[blue]%}%m%{$reset_color%}'
 local pwd='%{$fg[blue]%}%~%{$reset_color%}'
-local prompt='%{$fg[blue]%}>%{$reset_color%}'
+local prompt=' %{$fg[blue]%}>%{$reset_color%}'
 # local return_code='%(?..%{$fg[red]%}%? ↵ %{$reset_color%})'
 local git_branch='%{$reset_color%}$(git_prompt_info)$(git_prompt_ahead)%{$reset_color%}'
 
-ZSH_THEME_GIT_PROMPT_PREFIX="%{$fg[yellow]%}"
+ZSH_THEME_GIT_PROMPT_PREFIX="%{$fg[yellow]%} "
 ZSH_THEME_GIT_PROMPT_SUFFIX="%{$reset_color%}"
 ZSH_THEME_GIT_PROMPT_DIRTY=" %{$fg[red]%}✖"
 ZSH_THEME_GIT_PROMPT_CLEAN=""
@@ -63,7 +63,7 @@ ZSH_THEME_GIT_PROMPT_AHEAD=""
 # ZSH_THEME_GIT_PROMPT_UNTRACKED="%{$fg[red]%} ✭"
 
 # PROMPT="${user} ${pwd} $ "
-PROMPT="${pwd} ${git_branch} ${prompt} "
+PROMPT="${pwd}${git_branch}${prompt} "
 
 if [[ -s ~/.rvm/scripts/rvm ]] ; then
     source ~/.rvm/scripts/rvm
