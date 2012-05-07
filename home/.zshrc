@@ -40,6 +40,9 @@ grm() {
   git status | grep "deleted:" | awk '{print $3}' | xargs git rm --ignore-unmatch
 }
 
+# hub
+eval "$(hub alias -s)"
+
 # rbenv
 
 ###
@@ -70,16 +73,14 @@ if [[ -s ~/.rvm/scripts/rvm ]] ; then
     rvm use default > /dev/null
 fi
 
-# if [[ -s ~/.rvm/scripts/rvm ]] ; then
-#     local rvm='%{$fg[blue]%}‹$(rvm-prompt i v p g)›%{$reset_color%}'
-#     source ~/.rvm/scripts/rvm
-#     rvm use default > /dev/null
-#     PPROMPT="${return_code} ${git_branch} ${rvm}"
-# else
-#     PATH="$HOME/.rbenv/bin:/usr/local/bin:$PATH"
-#     eval "$(rbenv init -)"
-#     local rbenv='%{$fg[blue]%}‹$(rbenv version-name)›%{$reset_color%}'
-#     RPROMPT="${return_code} ${git_branch} ${rbenv}"
-# fi
-
-PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
+if [[ -s ~/.rvm/scripts/rvm ]] ; then
+    local rvm='%{$fg[blue]%}‹$(rvm-prompt i v p g)›%{$reset_color%}'
+    source ~/.rvm/scripts/rvm
+    rvm use default > /dev/null
+    # PPROMPT="${return_code} ${git_branch} ${rvm}"
+else
+    PATH="$HOME/.rbenv/bin:/usr/local/bin:$PATH"
+    eval "$(rbenv init -)"
+    # local rbenv='%{$fg[blue]%}‹$(rbenv version-name)›%{$reset_color%}'
+    # RPROMPT="${return_code} ${git_branch} ${rbenv}"
+fi
