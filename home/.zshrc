@@ -1,6 +1,8 @@
 # Path to your oh-my-zsh configuration.
 ZSH=$HOME/.oh-my-zsh
 
+PATH=$PATH:/usr/local/sbin
+
 # Map vi to vim, just in case
 alias vi=vim
 
@@ -80,7 +82,10 @@ if [[ -s ~/.rvm/scripts/rvm ]] ; then
     # PPROMPT="${return_code} ${git_branch} ${rvm}"
 else
     PATH="$HOME/.rbenv/bin:/usr/local/bin:$PATH"
-    eval "$(rbenv init -)"
+    # eval "$(rbenv init -)"
     # local rbenv='%{$fg[blue]%}‹$(rbenv version-name)›%{$reset_color%}'
     # RPROMPT="${return_code} ${git_branch} ${rbenv}"
 fi
+
+# Disable the mostly annoying auto correct
+unsetopt correct_all
