@@ -3,7 +3,7 @@
 	email = ariejan@ariejan.net
 [alias]
   co = checkout
-  lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr)%Creset' --abbrev-commit --date=relative
+  lg = log --graph --pretty=format:'%Cred%h%Creset %Cblue<%ae> -%C(yellow)%d%Creset %s %Cgreen(%cr)%Creset' --abbrev-commit --date=relative
   timelog = log --pretty=format:'%Cred%h%Creset - %C(yellow)%ae%Creset - %Cgreen%cd%Creset - %s%Creset' --abbrev-commit --date=iso
 [apply]
   whitespace = nowarn
@@ -27,18 +27,12 @@
 [branch]
   autosetuprebase = always
 [core]
-	quotepath = false
-	excludesfile = /Users/ariejan/.gitignore_global
+  quotepath = false
+  excludesfile = /Users/ariejan/.gitignore_global
 [merge]
-	ff = false
+  ff = false
 [mergetool]
-	keepBackup = true
+  keepBackup = true
 [github]
-	user = ariejan
+  user = ariejan
   token = !security 2>&1 >/dev/null find-generic-password -gs github.token | ruby -e 'print $1 if STDIN.gets =~ /^password: \\\"(.*)\\\"$/'
-[difftool "sourcetree"]
-	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
-	path = 
-[mergetool "sourcetree"]
-	cmd = /Applications/SourceTree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
-	trustExitCode = true
