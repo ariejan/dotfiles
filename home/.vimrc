@@ -35,7 +35,11 @@ set t_Co=256
 syntax on
 set showmatch "matchin braces
 set background=dark
-colorscheme jellybeans
+" colorscheme jellybeans
+colorscheme solarized
+
+" Replace Ruby 1.8 Hash syntax with 1.9 Hash syntax_
+nmap <leader>rh :%s/\v:(\w+) \=\>/\1:/g<cr>_ 
 
 " Font see dotfiles/data
 set guifont=Menlo\ for\ Powerline:h12
