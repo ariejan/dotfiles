@@ -10,9 +10,6 @@
 [submodule "home/.vim/bundle/vim-bundler"]
 	path = home/.vim/bundle/vim-bundler
 	url = https://github.com/tpope/vim-bundler.git
-[submodule "home/.vim/bundle/vim-colors-solarized"]
-	path = home/.vim/bundle/vim-colors-solarized
-	url = https://github.com/altercation/vim-colors-solarized.git
 [submodule "home/.vim/bundle/vim-rspec"]
 	path = home/.vim/bundle/vim-rspec
 	url = https://github.com/skwp/vim-rspec.git
@@ -22,9 +19,6 @@
 [submodule "home/.vim/bundle/vim-markdown"]
 	path = home/.vim/bundle/vim-markdown
 	url = https://github.com/tpope/vim-markdown.git
-[submodule "home/.vim/bundle/vim-powerline"]
-	path = home/.vim/bundle/vim-powerline
-	url = https://github.com/Lokaltog/vim-powerline.git
 [submodule "home/.vim/bundle/vim-less"]
 	path = home/.vim/bundle/vim-less
 	url = https://github.com/groenewege/vim-less
