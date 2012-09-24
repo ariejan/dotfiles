@@ -35,8 +35,7 @@ set t_Co=256
 syntax on
 set showmatch "matchin braces
 set background=dark
-" colorscheme jellybeans
-colorscheme solarized
+colorscheme smyck
 
 " Replace Ruby 1.8 Hash syntax with 1.9 Hash syntax_
 nmap <leader>rh :%s/\v:(\w+) \=\>/\1:/g<cr>_ 
