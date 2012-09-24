@@ -10,36 +10,15 @@
 [submodule "home/.vim/bundle/vim-bundler"]
 	path = home/.vim/bundle/vim-bundler
 	url = https://github.com/tpope/vim-bundler.git
-[submodule "home/.vim/bundle/Command-T"]
-	path = home/.vim/bundle/Command-T
-	url = https://github.com/wincent/Command-T.git
-[submodule "home/.vim/bundle/vim-colors-solarized"]
-	path = home/.vim/bundle/vim-colors-solarized
-	url = https://github.com/altercation/vim-colors-solarized.git
 [submodule "home/.vim/bundle/vim-rspec"]
 	path = home/.vim/bundle/vim-rspec
 	url = https://github.com/skwp/vim-rspec.git
 [submodule "home/.vim/bundle/vim-cucumber"]
 	path = home/.vim/bundle/vim-cucumber
 	url = https://github.com/tpope/vim-cucumber.git
-[submodule "home/.vim/bundle/vim-eunuch"]
-	path = home/.vim/bundle/vim-eunuch
-	url = https://github.com/tpope/vim-eunuch.git
 [submodule "home/.vim/bundle/vim-markdown"]
 	path = home/.vim/bundle/vim-markdown
 	url = https://github.com/tpope/vim-markdown.git
-[submodule "home/.vim/bundle/vim-repeat"]
-	path = home/.vim/bundle/vim-repeat
-	url = https://github.com/tpope/vim-repeat.git
-[submodule "home/.vim/bundle/tcomment_vim"]
-	path = home/.vim/bundle/tcomment_vim
-	url = https://github.com/tomtom/tcomment_vim.git
-[submodule "home/.vim/bundle/vim-powerline"]
-	path = home/.vim/bundle/vim-powerline
-	url = https://github.com/Lokaltog/vim-powerline.git
-[submodule "home/.vim/bundle/vim-fugitive"]
-	path = home/.vim/bundle/vim-fugitive
-	url = https://github.com/tpope/vim-fugitive.git
 [submodule "home/.vim/bundle/vim-less"]
 	path = home/.vim/bundle/vim-less
 	url = https://github.com/groenewege/vim-less
