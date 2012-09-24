@@ -8,6 +8,8 @@ alias vi=vim
 
 # Git aliases
 alias glh="git lg | head"
+alias grv="git remote -v"
+
 # Easily delete removed files from git index
 grm() {
   git status | grep "deleted:" | awk '{print $3}' | xargs git rm --ignore-unmatch
