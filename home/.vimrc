@@ -41,7 +41,7 @@ colorscheme smyck
 nmap <leader>rh :%s/\v:(\w+) \=\>/\1:/g<cr>_ 
 
 " Font see dotfiles/data
-set guifont=Menlo\ for\ Powerline:h12
+set guifont=Menlo:h12
 
 " Intuitive backspace
 set bs=indent,eol,start
@@ -102,7 +102,6 @@ function! StripTrailingWhitespace()
   " store the current search value
   let saved_search = @/
 
-
   " delete the whitespace (e means don't warn if pattern not found)
   %s/\s\+$//e
 
@@ -144,4 +143,4 @@ endif
 set sb
 set spr
 
-set statusline=%t%=%y\ [%c,%l]
+set statusline=%t%=%m\ %y\ [%c,%l]
