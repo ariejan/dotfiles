@@ -6,6 +6,10 @@ PATH=$PATH:/usr/local/sbin
 # Map vi to vim, just in case
 alias vi=vim
 
+# Tmux
+alias tl="tmux list-sessions"
+alias ta="tmux attach-session -t"
+
 # Git aliases
 alias glh="git lg | head"
 alias grv="git remote -v"
