@@ -122,6 +122,7 @@ if has('autocmd')
     autocmd BufNewFile,BufRead Gemfile.lock set ft=yaml
     autocmd BufNewFile,BufRead *.json set ft=javascript
     autocmd BufNewFile,BufRead *.prawn set ft=ruby
+    autocmd BufNewFile,BufRead *.go set ft=go
 
     " Enable Less syntax
     autocmd BufRead,BufNewFile *.less set filetype=less
