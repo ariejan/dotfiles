@@ -1,10 +1,5 @@
 # Paths
 export GOPATH="$HOME/go"
-
-# Get GOROOT from go itself, points to the
-# currently installed version with Homebrew
-for thing in `go env | grep ^GOROOT` ; do export $thing ; done
-
 export PATH="$GOPATH/bin:$PATH"
 
 # Vim FTW
