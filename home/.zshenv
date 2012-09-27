@@ -1,10 +1,14 @@
-export PATH="$HOME/.rbenv/bin:$PATH"
+# Paths
+export GOPATH="$HOME/go"
+export PATH="$GOPATH/bin:$PATH"
 
-eval "$(rbenv init -)"
-eval "$(hub alias -s)"
-
+# Vim FTW
 export EDITOR=vim
 
+# Locale
 export LANG=en_US.UTF-8
 export LC_CTYPE=en_US.UTF-8
 export LC_ALL=en_US.UTF-8
+
+eval "$(rbenv init -)"
+eval "$(hub alias -s)"
