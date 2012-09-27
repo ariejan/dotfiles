@@ -1,6 +1,6 @@
 # Paths
 export GOPATH="$HOME/go"
-export PATH="$GOPATH/bin:$PATH"
+export PATH="$HOME/.rbenv/bin:$GOPATH/bin:$PATH"
 
 # Vim FTW
 export EDITOR=vim
