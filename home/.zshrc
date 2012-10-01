@@ -14,6 +14,10 @@ alias ta="tmux attach-session -t"
 alias glh="git lg | head"
 alias grv="git remote -v"
 
+# Force the use of Heroku Toolbelt
+# instead of a locally installed gem
+alias heroku="/usr/bin/heroku"
+
 # Easily delete removed files from git index
 grm() {
   git status | grep "deleted:" | awk '{print $3}' | xargs git rm --ignore-unmatch
