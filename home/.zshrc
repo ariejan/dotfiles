@@ -19,6 +19,8 @@ alias gfo="git fetch origin"
 # instead of a locally installed gem
 alias heroku="/usr/bin/heroku"
 
+alias heroku="/usr/bin/heroku"
+
 # Easily delete removed files from git index
 grm() {
   git status | grep "deleted:" | awk '{print $3}' | xargs git rm --ignore-unmatch
