@@ -1,7 +1,7 @@
 # Path to your oh-my-zsh configuration.
 ZSH=$HOME/.oh-my-zsh
 
-PATH=$PATH:/usr/local/sbin
+PATH=/usr/local/bin:/usr/local/sbin:$PATH
 
 # Map vi to vim, just in case
 alias vi=vim
@@ -13,6 +13,7 @@ alias ta="tmux attach-session -t"
 # Git aliases
 alias glh="git lg | head"
 alias grv="git remote -v"
+alias gfo="git fetch origin"
 
 # Force the use of Heroku Toolbelt
 # instead of a locally installed gem
