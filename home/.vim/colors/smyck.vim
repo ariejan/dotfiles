@@ -18,7 +18,7 @@ endif
 
 hi Normal               cterm=none ctermbg=none     ctermfg=15      gui=none        guibg=#242424   guifg=#F7F7F7
 hi LineNr               cterm=none ctermbg=none     ctermfg=8       gui=none        guibg=#242424   guifg=#8F8F8F
-hi StatusLine           cterm=none ctermbg=none     ctermfg=2      gui=none        guibg=#5D5D5D   guifg=#FBFBFB
+hi StatusLine           cterm=none ctermbg=none     ctermfg=2       gui=none        guibg=#5D5D5D   guifg=#FBFBFB
 hi StatusLineNC         cterm=none ctermbg=none     ctermfg=8       gui=none        guibg=#5D5D5D   guifg=#FBFBFB
 hi Search               cterm=none ctermbg=6        ctermfg=15      gui=none        guibg=#2EB5C1   guifg=#F7F7F7
 hi IncSearch            cterm=none ctermbg=3        ctermfg=8       gui=none        guibg=#F6DC69   guifg=#8F8F8F
@@ -36,7 +36,7 @@ hi SpellBad             cterm=none ctermbg=1        ctermfg=15      gui=none    
 hi SpellCap             cterm=none ctermbg=4        ctermfg=15      gui=none                        guifg=#F7F7F7
 hi SpellRare            cterm=none ctermbg=4        ctermfg=15      gui=none                        guifg=#F7F7F7
 hi SpellLocal           cterm=none ctermbg=4        ctermfg=15      gui=none                        guifg=#F7F7F7
-hi Visual               cterm=none ctermbg=238      ctermfg=8       gui=none        guibg=#F7F7F7   guifg=#8F8F8F
+hi Visual               cterm=none ctermbg=4      ctermfg=8       gui=none        guibg=#F7F7F7   guifg=#8F8F8F
 hi Directory            cterm=none ctermbg=none     ctermfg=4       gui=none        guibg=#242424   guifg=#88CCE7
 hi SpecialKey           cterm=none ctermbg=none     ctermfg=8       gui=none                        guifg=#8F8F8F
 hi DiffAdd              cterm=bold ctermbg=2        ctermfg=15
