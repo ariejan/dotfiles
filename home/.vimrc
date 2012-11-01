@@ -145,3 +145,6 @@ set sb
 set spr
 
 set statusline=%t%=%m\ %y\ [%c,%l]
+
+highlight OverLength ctermbg=red ctermfg=white guibg=#592929
+match OverLength /\%81v.\+/

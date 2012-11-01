@@ -1,5 +1,5 @@
 [user]
-  name = Ariejan de Vroom
+	name = Ariejan de Vroom
   email = ariejan@ariejan.net
 [alias]
   co = checkout
@@ -36,3 +36,5 @@
 [github]
   user = ariejan
   token = !security 2>&1 >/dev/null find-generic-password -gs github.token | ruby -e 'print $1 if STDIN.gets =~ /^password: \\\"(.*)\\\"$/'
+[push]
+	default = simple
