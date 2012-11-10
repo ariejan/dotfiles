@@ -144,7 +144,12 @@ endif
 set sb
 set spr
 
+" Set a nice status line
 set statusline=%t%=%m\ %y\ [%c,%l]
 
+" Highlight anything in column > 80
 highlight OverLength ctermbg=red ctermfg=white guibg=#592929
 match OverLength /\%81v.\+/
+
+" Remap Esc to ii
+imap ii <Esc>
