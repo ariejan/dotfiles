@@ -6,19 +6,34 @@ PATH=/usr/local/bin:/usr/local/sbin:$PATH
 # Map vi to vim, just in case
 alias vi=vim
 
+# Make working with ~/.zshrc quicker
+alias reload='source ~/.zshrc'
+alias ea='vim ~/.zshrc && reload' # Edit aliases
+
 # Tmux
 alias tl="tmux list-sessions"
 alias ta="tmux attach-session -t"
 
 # Git aliases
+alias go="git checkout"
+alias gpom="git push origin master"
+alias glog='git log --pretty=format:"%C(yellow)%h%C(reset) %C(green)%ar%C(reset) %C(bold blue)%an%C(reset) %C(red)%d%C(reset) %s" --graph --abbrev-commit --decorate'
+alias gd="git diff"
+alias gap="git add -p"
+alias gaa="git add ."
+alias gc="git commit"
+alias gb="git branch"
+alias gca="git commit --amend"
+alias gmc='git ls-files --unmerged | cut -f2 | uniq' # git merge conflicts
 alias glh="git lg | head"
 alias grv="git remote -v"
 alias gfo="git fetch origin"
+alias gclean="git reset HEAD --hard ; git clean -fd"
+alias gz="git archive -o snapshot.zip HEAD"
+alias gt="git archive -o snapshot.tar.gz HEAD"
 
 # Force the use of Heroku Toolbelt
 # instead of a locally installed gem
-alias heroku="/usr/bin/heroku"
-
 alias heroku="/usr/bin/heroku"
 
 # Easily delete removed files from git index
@@ -26,12 +41,17 @@ grm() {
   git status | grep "deleted:" | awk '{print $3}' | xargs git rm --ignore-unmatch
 }
 
+function rbenv_version_info() {
+  local ruby_version
+  ruby_version=$(rbenv version 2>/dev/null) || return
+  echo "$ruby_version" | sed 's/[ \t].*$//'
+}
+
 # Uncomment following line if you want red dots to bundlere displayed while waiting for completion
 COMPLETION_WAITING_DOTS="true"
 
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(git brew bundler gem git rails3 redis-cli nyan osx heroku)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -48,4 +68,5 @@ ZSH_THEME_GIT_PROMPT_DIRTY="%{$fg[red]%}•"
 ZSH_THEME_GIT_PROMPT_CLEAN=""
 
 PROMPT='%{$fg[blue]%}>%{$reset_color%} '
-RPROMPT='%{$fg[white]%}%2c$(git_prompt_info) %{$reset_color%}%{$fg[blue]%}%n@%M%{$reset_color%}'
+RPROMPT='%{$fg[white]%}%2c$(git_prompt_info) %{$reset_color%}%{$fg[red]%}$(rbenv_version_info) %{$fg[blue]%}%n@%M%{$reset_color%}'
+
