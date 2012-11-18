@@ -15,6 +15,8 @@ alias tl="tmux list-sessions"
 alias ta="tmux attach-session -t"
 
 # Git aliases
+alias g="git"
+alias gst="git status"
 alias go="git checkout"
 alias gpom="git push origin master"
 alias glog='git log --pretty=format:"%C(yellow)%h%C(reset) %C(green)%ar%C(reset) %C(bold blue)%an%C(reset) %C(red)%d%C(reset) %s" --graph --abbrev-commit --decorate'
@@ -31,6 +33,11 @@ alias gfo="git fetch origin"
 alias gclean="git reset HEAD --hard ; git clean -fd"
 alias gz="git archive -o snapshot.zip HEAD"
 alias gt="git archive -o snapshot.tar.gz HEAD"
+
+# Bundler
+alias bi="bundle install"
+alias be="bundle exec"
+alias bu="bundle update"
 
 # Force the use of Heroku Toolbelt
 # instead of a locally installed gem
