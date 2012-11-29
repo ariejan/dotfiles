@@ -17,7 +17,7 @@ alias ta="tmux attach-session -t"
 # Git aliases
 alias g="git"
 alias gst="git status"
-alias go="git checkout"
+alias gco="git checkout"
 alias gpom="git push origin master"
 alias glog='git log --pretty=format:"%C(yellow)%h%C(reset) %C(green)%ar%C(reset) %C(bold blue)%an%C(reset) %C(red)%d%C(reset) %s" --graph --abbrev-commit --decorate'
 alias gd="git diff"
@@ -25,6 +25,7 @@ alias gap="git add -p"
 alias gaa="git add ."
 alias gc="git commit"
 alias gb="git branch"
+alias gba="git branch -a"
 alias gca="git commit --amend"
 alias gmc='git ls-files --unmerged | cut -f2 | uniq' # git merge conflicts
 alias glh="git lg | head"
