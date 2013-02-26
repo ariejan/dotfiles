@@ -83,3 +83,6 @@ RPROMPT='%{$fg[white]%}%2c$(git_prompt_info) %{$reset_color%}%{$fg[red]%}$(~/.rv
 
 # loadrvm
 PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
+
+### Added by the Heroku Toolbelt
+export PATH="/usr/local/heroku/bin:$PATH"
