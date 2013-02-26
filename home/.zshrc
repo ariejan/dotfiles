@@ -49,17 +49,12 @@ grm() {
   git status | grep "deleted:" | awk '{print $3}' | xargs git rm --ignore-unmatch
 }
 
-function rbenv_version_info() {
-  local ruby_version
-  ruby_version=$(rbenv version 2>/dev/null) || return
-  echo "$ruby_version" | sed 's/[ \t].*$//'
-}
-
 # Uncomment following line if you want red dots to bundlere displayed while waiting for completion
 COMPLETION_WAITING_DOTS="true"
 
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Example format: plugins=(rails git textmate ruby lighthouse)
+plugins=(bundler rails git ruby rvm osx)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -69,6 +64,10 @@ unsetopt auto_name_dirs
 # Disable the mostly annoying auto correct
 unsetopt correct_all
 
+function pp() {
+  pygmentize -O 'bg=dark,style=vim' -f terminal256 "$1" 
+}
+
 ### Zsh Prompt
 ZSH_THEME_GIT_PROMPT_PREFIX="%{$fg[yellow]%} "
 ZSH_THEME_GIT_PROMPT_SUFFIX="%{$reset_color%}"
@@ -76,5 +75,6 @@ ZSH_THEME_GIT_PROMPT_DIRTY="%{$fg[red]%}•"
 ZSH_THEME_GIT_PROMPT_CLEAN=""
 
 PROMPT='%{$fg[blue]%}>%{$reset_color%} '
-RPROMPT='%{$fg[white]%}%2c$(git_prompt_info) %{$reset_color%}%{$fg[red]%}$(rbenv_version_info) %{$fg[blue]%}%n@%M%{$reset_color%}'
+RPROMPT='%{$fg[white]%}%2c$(git_prompt_info) %{$reset_color%}%{$fg[red]%}$(~/.rvm/bin/rvm-prompt) %{$fg[blue]%}%n@%M%{$reset_color%}'
 
+# loadrvm
