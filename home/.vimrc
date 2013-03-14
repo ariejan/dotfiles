@@ -57,6 +57,9 @@ set linebreak
 nnoremap j gj
 nnoremap k gk
 
+" Clear search highlight 
+" nnoremap <esc> :noh<return><esc>
+
 " Some other settings
 set hidden
 set modelines=0
