@@ -1,5 +1,5 @@
 [user]
-	name = Ariejan de Vroom
+  name = Ariejan de Vroom
   email = ariejan@ariejan.net
 [alias]
   co = checkout
@@ -30,7 +30,7 @@
   quotepath = false
   excludesfile = /Users/ariejan/.gitignore_global
 [merge]
-  ff = true
+  ff = false
 [mergetool]
   keepBackup = true
 [github]
