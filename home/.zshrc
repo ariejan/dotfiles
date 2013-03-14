@@ -6,6 +6,8 @@ PATH=/usr/local/bin:/usr/local/sbin:$PATH
 # Map vi to vim, just in case
 alias vi=vim
 
+alias j6='export JAVA_HOME=/System/Library/Java/JavaVirtualMachines/1.6.0.jdk/Contents/Home'
+
 # Make working with ~/.zshrc quicker
 alias reload='source ~/.zshrc'
 alias ea='vim ~/.zshrc && reload' # Edit aliases
@@ -34,6 +36,7 @@ alias gfo="git fetch origin"
 alias gclean="git reset HEAD --hard ; git clean -fd"
 alias gz="git archive -o snapshot.zip HEAD"
 alias gt="git archive -o snapshot.tar.gz HEAD"
+alias gpr="git --no-pager lg HEAD --not $1"
 
 # Bundler
 alias bi="bundle install"
