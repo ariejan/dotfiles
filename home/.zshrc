@@ -16,6 +16,14 @@ alias ea='vim ~/.zshrc && reload' # Edit aliases
 alias tl="tmux list-sessions"
 alias ta="tmux attach-session -t"
 
+# Rails
+alias migrate="rake db:migrate db:test:prepare"
+alias remigrate="rake db:drop db:create db:migrate db:test:prepare"
+
+migration() {
+  rails generate migration $1 | grep create | tr -s ' ' | cut -d ' ' -f 3 | xargs -o vim -f --
+}
+
 # Git aliases
 alias g="git"
 alias gst="git status"
@@ -57,7 +65,8 @@ COMPLETION_WAITING_DOTS="true"
 
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(bundler rails git ruby rvm osx)
+# plugins=(bundler rails git ruby rvm osx)
+plugins=(rails git ruby rvm osx)
 
 source $ZSH/oh-my-zsh.sh
 
