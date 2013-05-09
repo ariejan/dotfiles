@@ -20,6 +20,11 @@ alias ta="tmux attach-session -t"
 alias migrate="rake db:migrate db:test:prepare"
 alias remigrate="rake db:drop db:create db:migrate db:test:prepare"
 
+alias rsm="rspec spec/models"
+alias rsd="rspec spec/decorators"
+
+alias wip="rake cucumber:wip"
+
 migration() {
   rails generate migration $1 | grep create | tr -s ' ' | cut -d ' ' -f 3 | xargs -o vim -f --
 }
@@ -36,6 +41,7 @@ alias gaa="git add ."
 alias gc="git commit"
 alias gb="git branch"
 alias gba="git branch -a"
+alias gbd="git branch -D"
 alias gca="git commit --amend"
 alias gmc='git ls-files --unmerged | cut -f2 | uniq' # git merge conflicts
 alias glh="git lg | head"
@@ -45,6 +51,7 @@ alias gclean="git reset HEAD --hard ; git clean -fd"
 alias gz="git archive -o snapshot.zip HEAD"
 alias gt="git archive -o snapshot.tar.gz HEAD"
 alias gpr="git --no-pager lg HEAD --not $1"
+alias grp="git remote prune origin"
 
 # Bundler
 alias bi="bundle install"
