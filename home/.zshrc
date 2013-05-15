@@ -20,10 +20,16 @@ alias ta="tmux attach-session -t"
 alias migrate="rake db:migrate db:test:prepare"
 alias remigrate="rake db:drop db:create db:migrate db:test:prepare"
 
-alias rsm="rspec spec/models"
-alias rsd="rspec spec/decorators"
+alias rsa="clear && rspec spec/api"
+alias rsm="clear && rspec spec/models"
+alias rsd="clear && rspec spec/decorators"
+alias rsj="clear && rspec spec/jobs"
 
-alias wip="rake cucumber:wip"
+alias cuke="clear && rake cucumber"
+alias wip="clear && rake cucumber:wip"
+
+# Pow
+alias rst="touch tmp/restart.txt"
 
 migration() {
   rails generate migration $1 | grep create | tr -s ' ' | cut -d ' ' -f 3 | xargs -o vim -f --
@@ -52,6 +58,7 @@ alias gz="git archive -o snapshot.zip HEAD"
 alias gt="git archive -o snapshot.tar.gz HEAD"
 alias gpr="git --no-pager lg HEAD --not $1"
 alias grp="git remote prune origin"
+alias grhh="git reset HEAD --hard"
 
 # Bundler
 alias bi="bundle install"
