@@ -101,7 +101,7 @@ ZSH_THEME_GIT_PROMPT_DIRTY="%{$fg[red]%}•"
 ZSH_THEME_GIT_PROMPT_CLEAN=""
 
 PROMPT='%{$fg[blue]%}>%{$reset_color%} '
-RPROMPT='%{$fg[white]%}%2c$(git_prompt_info) %{$reset_color%}%{$fg[red]%}$(~/.rvm/bin/rvm-prompt) %{$fg[blue]%}%n@%M%{$reset_color%}'
+RPROMPT='%{$fg[blue]%}%2c$(git_prompt_info) %{$reset_color%}%{$fg[red]%}$(~/.rvm/bin/rvm-prompt) %{$fg[blue]%}%n@%M%{$reset_color%}'
 
 # loadrvm
 PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
