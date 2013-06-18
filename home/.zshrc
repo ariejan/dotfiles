@@ -35,6 +35,9 @@ migration() {
   rails generate migration $1 | grep create | tr -s ' ' | cut -d ' ' -f 3 | xargs -o vim -f --
 }
 
+# Hub
+alias hb="hub browse"
+
 # Git aliases
 alias g="git"
 alias gst="git status"
