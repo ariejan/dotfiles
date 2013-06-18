@@ -19,6 +19,7 @@ alias ta="tmux attach-session -t"
 # Rails
 alias migrate="rake db:migrate db:test:prepare"
 alias remigrate="rake db:drop db:create db:migrate db:test:prepare"
+alias seed="rake db:seed"
 
 alias rsa="clear && rspec spec/api"
 alias rsm="clear && rspec spec/models"
