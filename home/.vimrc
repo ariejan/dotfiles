@@ -121,7 +121,7 @@ if has('autocmd')
 
     " Use 2 spaces for tabs in ruby and associated langs
     autocmd Filetype coffee,ruby,yaml,rake,rb,ru setlocal ts=2 sw=2 expandtab
-    autocmd BufNewFile,BufRead {*.rake,Gemfile,Guardfile,Capfile,Rakefile,Thorfile,config.ru} set ft=ruby
+    autocmd BufNewFile,BufRead {*.rake,Podfile,Gemfile,Guardfile,Capfile,Rakefile,Thorfile,config.ru} set ft=ruby
     autocmd BufNewFile,BufRead Gemfile.lock set ft=yaml
     autocmd BufNewFile,BufRead *.json set ft=javascript
     autocmd BufNewFile,BufRead *.prawn set ft=ruby
@@ -151,8 +151,8 @@ set spr
 set statusline=%t%=%m\ %y\ [%c,%l]
 
 " Highlight anything in column > 80
-highlight OverLength ctermbg=red ctermfg=white guibg=#592929
-match OverLength /\%81v.\+/
+" highlight OverLength ctermbg=red ctermfg=white guibg=#592929
+" match OverLength /\%81v.\+/
 
 " Remap Esc to ii
 imap ii <Esc>
