@@ -41,7 +41,8 @@ colorscheme lucius
 nmap <leader>rh :%s/\v:(\w+) \=\>/\1:/g<cr>_ 
 
 " Font see dotfiles/data
-set guifont=Menlo:h12
+" set guifont=Menlo:h12
+set guifont=Droid\ Sans\ Mono\ for\ Powerline:h12
 
 " Intuitive backspace
 set bs=indent,eol,start
@@ -156,3 +157,7 @@ set statusline=%t%=%m\ %y\ [%c,%l]
 
 " Remap Esc to ii
 imap ii <Esc>
+
+" Airline
+let g:airline_theme='light'
+let g:airline_powerline_fonts=1
