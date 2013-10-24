@@ -34,7 +34,7 @@ set t_Co=256
 " Syntax highlighting
 syntax on
 set showmatch "matchin braces
-set background=light
+set background=dark
 colorscheme lucius
 
 " Replace Ruby 1.8 Hash syntax with 1.9 Hash syntax_
