@@ -3,6 +3,12 @@ ZSH=$HOME/.oh-my-zsh
 
 PATH=/usr/local/bin:/usr/local/sbin:$PATH
 
+# Node.js Global
+export PATH=/usr/local/share/npm/bin:$PATH
+
+# Golang Global
+export PATH="$PATH:$GOPATH/bin"
+
 # Map vi to vim, just in case
 alias vi=vim
 
@@ -21,6 +27,7 @@ alias migrate="rake db:migrate db:test:prepare"
 alias remigrate="rake db:drop db:create db:migrate db:test:prepare"
 alias seed="rake db:seed"
 
+alias rs="clear && rspec"
 alias rsa="clear && rspec spec/api"
 alias rsm="clear && rspec spec/models"
 alias rsd="clear && rspec spec/decorators"
