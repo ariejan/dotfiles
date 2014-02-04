@@ -2,13 +2,12 @@ These are my personal dotfiles. Feel free to browse through them and copy whatev
 
 To use this:
 
-## install rvm and compile ruby 1.9.3
-    bash -s stable < <(curl -s https://raw.github.com/wayneeseguin/rvm/master/binscripts/rvm-installer)
-    source ~/.rvm/scripts/rvm
+## install rvm and compile a recent version of ruby
+    \curl -sSL https://get.rvm.io | bash
     
     rvm requirements
-    rvm install 1.9.3
-    rvm use 1.9.3 --default
+    rvm install 2.1.0
+    rvm use 2.1.0 --default
 
 ## install oh-my-zsh
 

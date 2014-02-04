@@ -9,8 +9,11 @@ export PATH=/usr/local/share/npm/bin:$PATH
 # Golang Global
 export PATH="$PATH:$GOPATH/bin"
 
+### Added by the Heroku Toolbelt
+export PATH="/usr/local/heroku/bin:$PATH"
+
 # Map vi to vim, just in case
-alias vi=vim
+alias vi=mvim
 
 alias j6='export JAVA_HOME=/System/Library/Java/JavaVirtualMachines/1.6.0.jdk/Contents/Home'
 
@@ -45,6 +48,12 @@ migration() {
 
 # Hub
 alias hb="hub browse"
+
+# Git Doge aliases
+alias such=git
+alias many=git
+alias very=git
+alias wow='git status'
 
 # Git aliases
 alias g="git"
@@ -114,8 +123,4 @@ ZSH_THEME_GIT_PROMPT_CLEAN=""
 PROMPT='%{$fg[blue]%}>%{$reset_color%} '
 RPROMPT='%{$fg[blue]%}%2c$(git_prompt_info) %{$reset_color%}%{$fg[red]%}$(~/.rvm/bin/rvm-prompt) %{$fg[blue]%}%n@%M%{$reset_color%}'
 
-# loadrvm
 PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
-
-### Added by the Heroku Toolbelt
-export PATH="/usr/local/heroku/bin:$PATH"
