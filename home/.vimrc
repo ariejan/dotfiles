@@ -28,6 +28,9 @@ set wildmenu
 set wildmode=list:longest
 set wildignore+=tmp,.bundle,.sass-cache,.git,.svn,.hg
 
+" Disable audible bell
+set visualbell
+
 " Set 256 color support
 set t_Co=256
 

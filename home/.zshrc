@@ -91,7 +91,7 @@ alias heroku="/usr/bin/heroku"
 
 # Easily delete removed files from git index
 grm() {
-  git status | grep "deleted:" | awk '{print $3}' | xargs git rm --ignore-unmatch
+  git status | grep "deleted:" | awk '{print $2}' | xargs git rm --ignore-unmatch
 }
 
 # Uncomment following line if you want red dots to bundlere displayed while waiting for completion
