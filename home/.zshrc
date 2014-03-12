@@ -13,7 +13,7 @@ export PATH="$PATH:$GOPATH/bin"
 export PATH="/usr/local/heroku/bin:$PATH"
 
 # Map vi to vim, just in case
-alias vi=mvim
+alias vi=vim
 
 alias j6='export JAVA_HOME=/System/Library/Java/JavaVirtualMachines/1.6.0.jdk/Contents/Home'
 
