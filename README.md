@@ -19,3 +19,9 @@ To use this:
     homesick clone ariejan/dotfiles
     homesick symlink ariejan/dotfiles
 
+## Vim Setup
+
+Vim plugins are managed using Vundle and installed in `~/.vundle.local`. 
+
+To install all configured plugins, simple start vim and run `:BundleInstall`.
+

@@ -1,10 +1,50 @@
 set nocompatible
-set laststatus=2
+filetype off
 
-" Load pathogen
-call pathogen#infect()
-" Load helptags
-call pathogen#helptags()
+" Load Vundle, store bundles in ~/.vundle.local
+set rtp+=~/.vim/bundle/vundle/
+let path = '~/.vundle.local'
+call vundle#rc(path)
+
+" Let vundle manage vundle
+Bundle 'gmarik/vundle'
+
+" Bling
+Bundle 'bling/vim-airline'
+
+" Useful helpers
+Bundle 'tomtom/tcomment_vim'
+Bundle 'tpope/vim-endwise'
+Bundle 'tpope/vim-surround'
+Bundle 'align'
+
+" TDD / BDD
+Bundle 'thoughtbot/vim-rspec'
+Bundle 'tpope/vim-cucumber'
+
+" Git / Fugitive
+Bundle 'tpope/vim-fugitive'
+
+" Markdown
+Bundle 'tpope/vim-markdown'
+
+" Ruby / Rails
+Bundle 'tpope/vim-bundler'
+Bundle 'vim-ruby/vim-ruby'
+Bundle 'tpope/vim-rails'
+
+" JS
+Bundle 'kchmck/vim-coffee-script'
+
+" CSS
+Bundle 'hail2u/vim-css3-syntax'
+Bundle 'tpope/vim-haml'
+
+" Done, finish up Vundle
+filetype plugin indent on
+
+
+set laststatus=2
 
 if !empty($MY_RUBY_HOME)
   let g:ruby_path = join(split(glob($MY_RUBY_HOME.'/lib/ruby/*.*')."\n".glob($MY_RUBY_HOME.'/lib/rubysite_ruby/*'),"\n"),',')
