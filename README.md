@@ -27,7 +27,4 @@ To install the Vundle submodule and all plugins:
 
     cd ~/.homesick/repos/ariejan/dotfiles
     git submodule update --init --recursive
-    vim
-    
-And then simply run `:BundleInstall`.
-
+    vim +BundleInstall +qall
