@@ -43,7 +43,6 @@ Bundle 'tpope/vim-haml'
 " Done, finish up Vundle
 filetype plugin indent on
 
-
 set laststatus=2
 
 if !empty($MY_RUBY_HOME)
@@ -90,9 +89,6 @@ set guifont=Droid\ Sans\ Mono\ for\ Powerline:h12
 " Intuitive backspace
 set bs=indent,eol,start
 
-" Filetype detection
-filetype plugin indent on
-
 " Line wrapping
 set nowrap
 set linebreak
@@ -100,9 +96,6 @@ set linebreak
 " Make sure we use editor lines, not real lines when navigating
 nnoremap j gj
 nnoremap k gk
-
-" Clear search highlight 
-" nnoremap <esc> :noh<return><esc>
 
 " Some other settings
 set hidden
