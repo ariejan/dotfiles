@@ -24,6 +24,7 @@ Bundle 'tpope/vim-cucumber'
 
 " Git / Fugitive
 Bundle 'tpope/vim-fugitive'
+Bundle 'airblade/vim-gitgutter'
 
 " Markdown
 Bundle 'tpope/vim-markdown'
@@ -43,6 +44,7 @@ Bundle 'tpope/vim-haml'
 " Done, finish up Vundle
 filetype plugin indent on
 
+" To enable vim-airline directly
 set laststatus=2
 
 if !empty($MY_RUBY_HOME)
@@ -61,6 +63,10 @@ set autoread
 
 " Keep a longer history
 set history=100
+
+" Realtime git update
+let g:gitgutter_realtime = 1
+let g:gitgutter_eager = 1
 
 " Make file/command completion useful
 set wildmenu
@@ -197,3 +203,33 @@ imap ii <Esc>
 " Airline
 let g:airline_theme='light'
 let g:airline_powerline_fonts=1
+
+" Easy pasting, ripped from tpope/vim-unimpaired
+function! s:setup_paste() abort
+  let s:paste = &paste
+  let s:mouse = &mouse
+  set paste
+  set mouse=
+endfunction
+
+nnoremap <silent> <Plug>unimpairedPaste :call <SID>setup_paste()<CR>
+
+nnoremap <silent> yp  :call <SID>setup_paste()<CR>a
+nnoremap <silent> yP  :call <SID>setup_paste()<CR>i
+nnoremap <silent> yo  :call <SID>setup_paste()<CR>o
+nnoremap <silent> yO  :call <SID>setup_paste()<CR>O
+nnoremap <silent> yA  :call <SID>setup_paste()<CR>A
+nnoremap <silent> yI  :call <SID>setup_paste()<CR>I
+nnoremap <silent> ygi :call <SID>setup_paste()<CR>gi
+nnoremap <silent> ygI :call <SID>setup_paste()<CR>gI
+
+augroup unimpaired_paste
+  autocmd!
+  autocmd InsertLeave *
+        \ if exists('s:paste') |
+        \   let &paste = s:paste |
+        \   let &mouse = s:mouse |
+        \   unlet s:paste |
+        \   unlet s:mouse |
+        \ endif
+augroup END
