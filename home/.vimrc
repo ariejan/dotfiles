@@ -233,3 +233,8 @@ augroup unimpaired_paste
         \   unlet s:mouse |
         \ endif
 augroup END
+
+" Mark the 79-character limit
+let &colorcolumn=join(range(80,999),",")
+highlight ColorColumn ctermbg=235 guibg=#2c2d27
+
