@@ -31,7 +31,7 @@
   quotepath = false
   excludesfile = /Users/ariejan/.gitignore_global
 [merge]
-  ff = false
+  ff = true
 [mergetool]
   keepBackup = true
 [github]

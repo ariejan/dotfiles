@@ -23,5 +23,8 @@ To use this:
 
 Vim plugins are managed using Vundle and installed in `~/.vundle.local`. 
 
-To install all configured plugins, simple start vim and run `:BundleInstall`.
+To install the Vundle submodule and all plugins: 
 
+    cd ~/.homesick/repos/ariejan/dotfiles
+    git submodule update --init --recursive
+    vim +BundleInstall +qall
