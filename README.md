@@ -17,7 +17,11 @@ To use this:
 
     gem install homesick
     homesick clone ariejan/dotfiles
-    homesick symlink ariejan/dotfiles
+    homesick symlink dotfiles
+
+## Install AJ ##
+
+https://github.com/ariejan/aj
 
 ## Vim Setup
 
@@ -25,6 +29,6 @@ Vim plugins are managed using Vundle and installed in `~/.vundle.local`.
 
 To install the Vundle submodule and all plugins: 
 
-    cd ~/.homesick/repos/ariejan/dotfiles
+    cd ~/.homesick/repos/dotfiles
     git submodule update --init --recursive
     vim +BundleInstall +qall
