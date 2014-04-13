@@ -1,6 +1,13 @@
 # Path to your oh-my-zsh configuration.
 ZSH=$HOME/.oh-my-zsh
 
+# Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
+# Example format: plugins=(rails git textmate ruby lighthouse)
+# plugins=(bundler rails git ruby rvm osx)
+plugins=(rails git ruby rvm osx)
+
+source $ZSH/oh-my-zsh.sh
+
 PATH=/usr/local/bin:/usr/local/sbin:$PATH
 
 # Node.js Global
@@ -57,7 +64,7 @@ alias wow='git status'
 
 # Git aliases
 alias g="git"
-alias gst="git status"
+alias gst="git status -sb"
 alias gco="git checkout"
 alias gpom="git push origin master"
 alias glog='git log --pretty=format:"%C(yellow)%h%C(reset) %C(green)%ar%C(reset) %C(bold blue)%an%C(reset) %C(red)%d%C(reset) %s" --graph --abbrev-commit --decorate'
@@ -97,12 +104,6 @@ grm() {
 # Uncomment following line if you want red dots to bundlere displayed while waiting for completion
 COMPLETION_WAITING_DOTS="true"
 
-# Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
-# Example format: plugins=(rails git textmate ruby lighthouse)
-# plugins=(bundler rails git ruby rvm osx)
-plugins=(rails git ruby rvm osx)
-
-source $ZSH/oh-my-zsh.sh
 
 # Customize to your needs...
 unsetopt auto_name_dirs
