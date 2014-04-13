@@ -25,6 +25,8 @@ Bundle 'tpope/vim-cucumber'
 " Git / Fugitive
 Bundle 'tpope/vim-fugitive'
 Bundle 'airblade/vim-gitgutter'
+Bundle 'mattn/webapi-vim'
+Bundle 'mattn/gist-vim'
 
 " Markdown
 Bundle 'tpope/vim-markdown'
@@ -244,3 +246,9 @@ augroup END
 let &colorcolumn=join(range(80,999),",")
 highlight ColorColumn ctermbg=235 guibg=#2c2d27
 
+
+" Configurat gist
+let g:gist_clip_command = 'pbcopy'
+let g:gist_detect_filetype = 1
+let g:gist_post_private = 1
+let g:gist_open_browser_after_post = 1
