@@ -30,6 +30,7 @@
 [core]
   quotepath = false
   excludesfile = /Users/ariejan/.gitignore_global
+  editor = /usr/bin/vim
 [merge]
   ff = true
 [mergetool]
