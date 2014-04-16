@@ -1,6 +1,9 @@
 set nocompatible
 filetype off
 
+" Execute commands with Bash, always.
+set shell=/bin/bash
+
 " Load Vundle, store bundles in ~/.vundle.local
 set rtp+=~/.vim/bundle/vundle/
 let path = '~/.vundle.local'
