@@ -1,10 +1,22 @@
 function fish_prompt --description 'Write out the prompt'
-	set -l home_escaped (echo -n $HOME | sed 's/\//\\\\\//g')
-   set -l pwd (echo -n $PWD | sed "s/^$home_escaped/~/" | sed 's/ /%20/g')
-   set -l prompt_symbol ''
-   switch $USER
-       case root; set prompt_symbol '#'
-       case '*';  set prompt_symbol '$'
-   end
-   printf "[%s@%s %s%s%s]%s " $USER (hostname -s) (set_color $fish_color_cwd) $pwd (set_color normal) $prompt_symbol
+	
+	set -l last_status $status
+
+	if not set -q __fish_prompt_normal
+		set -g __fish_prompt_normal (set_color normal)
+	end
+
+	# PWD
+	set_color $fish_color_cwd
+	echo -n (prompt_pwd)
+	set_color normal
+
+	printf '%s ' (__fish_git_prompt)
+
+	if not test $last_status -eq 0
+	set_color $fish_color_error
+	end
+
+	echo -n '$ '
+
 end
