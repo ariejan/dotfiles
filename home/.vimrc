@@ -46,6 +46,12 @@ Bundle 'kchmck/vim-coffee-script'
 Bundle 'hail2u/vim-css3-syntax'
 Bundle 'tpope/vim-haml'
 
+" Fish
+Bundle "dag/vim-fish"
+
+" TMux
+Bundle 'christoomey/vim-tmux-navigator'
+
 " Done, finish up Vundle
 filetype plugin indent on
 
