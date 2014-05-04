@@ -52,8 +52,14 @@ Bundle "dag/vim-fish"
 " TMux
 Bundle 'christoomey/vim-tmux-navigator'
 
+" Golang
+Bundle 'jnwhiteh/vim-golang'
+
 " Done, finish up Vundle
 filetype plugin indent on
+
+" Auto-format Golang
+autocmd FileType go autocmd BufWritePre <buffer> Fmt
 
 " To enable vim-airline directly
 set laststatus=2
