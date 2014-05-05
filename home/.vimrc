@@ -12,6 +12,8 @@ call vundle#rc(path)
 " Let vundle manage vundle
 Bundle 'gmarik/vundle'
 
+Bundle 'jonathanfilip/vim-lucius'
+
 " Bling
 Bundle 'bling/vim-airline'
 
@@ -99,8 +101,10 @@ set t_Co=256
 " Syntax highlighting
 syntax on
 set showmatch "matchin braces
-set background=dark
+" set background=dark
+
 colorscheme lucius
+LuciusBlack
 
 " Replace Ruby 1.8 Hash syntax with 1.9 Hash syntax_
 nmap <leader>rh :%s/\v:(\w+) \=\>/\1:/g<cr>_ 
@@ -224,7 +228,7 @@ set statusline=%t%=%m\ %y\ [%c,%l]
 imap ii <Esc>
 
 " Airline
-let g:airline_theme='light'
+let g:airline_theme='lucius'
 let g:airline_powerline_fonts=1
 
 " Easy pasting, ripped from tpope/vim-unimpaired
@@ -258,8 +262,8 @@ augroup unimpaired_paste
 augroup END
 
 " Mark the 79-character limit
-let &colorcolumn=join(range(80,999),",")
-highlight ColorColumn ctermbg=235 guibg=#2c2d27
+" let &colorcolumn=join(range(80,999),",")
+" highlight ColorColumn ctermbg=235 guibg=#2c2d27
 
 
 " Configurat gist
