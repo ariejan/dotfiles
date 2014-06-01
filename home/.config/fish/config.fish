@@ -13,7 +13,7 @@ set fish_plugins autojump bundler rvm rake rails localhost
 #set fish_custom $HOME/dotfiles/oh-my-fish
 
 set -x GOPATH $HOME/go
-set PATH $PATH $GOPATH /usr/local/share/npm/bin
+set PATH $PATH $GOPATH $GOPATH/bin /usr/local/share/npm/bin
 
 # Load oh-my-fish configuration.
 . $fish_path/oh-my-fish.fish
