@@ -1,6 +1,7 @@
 [user]
   name = Ariejan de Vroom
   email = ariejan@ariejan.net
+  signingkey = F713697B
 [alias]
   wtf = "!git commit -m \"$(curl -s whatthecommit.com/index.txt)\""
   co = checkout
@@ -41,5 +42,5 @@
 [push]
   default = simple
 [filter "media"]
-	clean = git-media-clean %f
-	smudge = git-media-smudge %f
+  clean = git-media-clean %f
+  smudge = git-media-smudge %f
