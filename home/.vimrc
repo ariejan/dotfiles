@@ -6,13 +6,15 @@ set shell=/bin/bash
 
 " Load Vundle, store bundles in ~/.vundle.local
 set rtp+=~/.vim/bundle/vundle/
-let path = '~/.vundle.local'
-call vundle#rc(path)
+"let path = '~/.vundle.local'
+" call vundle#rc(path)
+call vundle#begin('~/.vundle.local')
 
 " Let vundle manage vundle
 Bundle 'gmarik/vundle'
 
-Bundle 'jonathanfilip/vim-lucius'
+" Colours and stuff
+Bundle 'chriskempson/base16-vim'
 
 " Bling
 Bundle 'bling/vim-airline'
@@ -58,6 +60,7 @@ Bundle 'christoomey/vim-tmux-navigator'
 Bundle 'jnwhiteh/vim-golang'
 
 " Done, finish up Vundle
+call vundle#end()
 filetype plugin indent on
 
 " Auto-format Golang
@@ -74,7 +77,7 @@ endif
 set encoding=utf-8
 
 " Highlight the cursor line
-" set cursorline
+set cursorline
 " set cursorcolumn
 
 " Automatically update changes on getting focus
@@ -101,10 +104,9 @@ set t_Co=256
 " Syntax highlighting
 syntax on
 set showmatch "matchin braces
-" set background=dark
+set background=dark
 
-colorscheme lucius
-LuciusBlack
+colorscheme base16-tomorrow
 
 " Replace Ruby 1.8 Hash syntax with 1.9 Hash syntax_
 nmap <leader>rh :%s/\v:(\w+) \=\>/\1:/g<cr>_ 
