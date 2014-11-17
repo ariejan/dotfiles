@@ -19,6 +19,10 @@ Bundle 'chriskempson/base16-vim'
 " Bling
 Bundle 'bling/vim-airline'
 
+" JavaScript / Ember
+Bundle 'pangloss/vim-javascript'
+Bundle 'mustache/vim-mustache-handlebars'
+
 " Useful helpers
 Bundle 'tomtom/tcomment_vim'
 Bundle 'tpope/vim-endwise'
@@ -189,7 +193,7 @@ if has('autocmd')
     autocmd BufWritePre,FileWritePre *.html,*.rb,*.php,*.xml,*.erb call StripTrailingWhitespace()
 
     " Use 2 spaces for tabs in ruby and associated langs
-    autocmd Filetype coffee,ruby,yaml,rake,rb,ru setlocal ts=2 sw=2 expandtab
+    autocmd Filetype coffee,ruby,yaml,rake,rb,ru,javascript setlocal ts=2 sw=2 expandtab
     autocmd BufNewFile,BufRead {*.rake,Podfile,Gemfile,Guardfile,Capfile,Rakefile,Thorfile,config.ru} set ft=ruby
     autocmd BufNewFile,BufRead Gemfile.lock set ft=yaml
     autocmd BufNewFile,BufRead *.json set ft=javascript
