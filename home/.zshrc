@@ -1,3 +1,19 @@
+# Antigen
+source $HOME/.antigen.zsh
+
+antigen use oh-my-zsh
+antigen theme ariejan/dotfiles themes/af-magic-mod
+
+antigen bundles <<EOBUNDLES
+  command-not-found
+  autoenv
+  zsh-users/zsh-syntax-highlighting
+  jimhester/per-directory-history
+EOBUNDLES
+
+antigen apply
+
+# Set path correctly for Homebrew
 PATH=/usr/local/bin:/usr/local/sbin:$PATH
 
 # Node.js Global
@@ -12,12 +28,6 @@ export PATH="/usr/local/heroku/bin:$PATH"
 # Map vi to vim, just in case
 alias vi=vim
 
-alias j6='export JAVA_HOME=/System/Library/Java/JavaVirtualMachines/1.6.0.jdk/Contents/Home'
-
-# Make working with ~/.zshrc quicker
-alias reload='source ~/.zshrc'
-alias ea='vim ~/.zshrc && reload' # Edit aliases
-
 # Tmux
 alias tl="tmux list-sessions"
 alias ta="tmux attach-session -t"
@@ -27,17 +37,8 @@ alias migrate="rake db:migrate db:test:prepare"
 alias remigrate="rake db:drop db:create db:migrate db:test:prepare"
 alias seed="rake db:seed"
 
-alias rs="clear && rspec"
-alias rsa="clear && rspec spec/api"
-alias rsm="clear && rspec spec/models"
-alias rsd="clear && rspec spec/decorators"
-alias rsj="clear && rspec spec/jobs"
-
 alias cuke="clear && rake cucumber"
 alias wip="clear && rake cucumber:wip"
-
-# Pow
-alias rst="touch tmp/restart.txt"
 
 migration() {
   rails generate migration $1 | grep create | tr -s ' ' | cut -d ' ' -f 3 | xargs -o vim -f --
@@ -45,12 +46,6 @@ migration() {
 
 # Hub
 alias hb="hub browse"
-
-# Git Doge aliases
-alias such=git
-alias many=git
-alias very=git
-alias wow='git status'
 
 # Git aliases
 alias g="git"
@@ -77,19 +72,15 @@ alias gpr="git --no-pager lg HEAD --not $1"
 alias grp="git remote prune origin"
 alias grhh="git reset HEAD --hard"
 
-# Bundler
-alias bi="bundle install"
-alias be="bundle exec"
-alias bu="bundle update"
-
-# Force the use of Heroku Toolbelt
-# instead of a locally installed gem
-alias heroku="/usr/bin/heroku"
-
 # Easily delete removed files from git index
 grm() {
   git status | grep "deleted:" | awk '{print $2}' | xargs git rm --ignore-unmatch
 }
+
+# Bundler
+alias bi="bundle install"
+alias be="bundle exec"
+alias bu="bundle update"
 
 # Uncomment following line if you want red dots to bundlere displayed while waiting for completion
 COMPLETION_WAITING_DOTS="true"
@@ -99,7 +90,3 @@ unsetopt auto_name_dirs
 
 # Disable the mostly annoying auto correct
 unsetopt correct_all
-
-function pp() {
-  pygmentize -O 'bg=dark,style=vim' -f terminal256 "$1" 
-}
