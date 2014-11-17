@@ -7,6 +7,7 @@ antigen theme ariejan/dotfiles themes/af-magic-mod
 antigen bundles <<EOBUNDLES
   command-not-found
   autoenv
+  rbenv
   zsh-users/zsh-syntax-highlighting
   jimhester/per-directory-history
 EOBUNDLES
