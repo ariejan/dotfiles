@@ -1,13 +1,3 @@
-# Path to your oh-my-zsh configuration.
-ZSH=$HOME/.oh-my-zsh
-
-# Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
-# Example format: plugins=(rails git textmate ruby lighthouse)
-# plugins=(bundler rails git ruby rvm osx)
-plugins=(rails git ruby rvm osx)
-
-source $ZSH/oh-my-zsh.sh
-
 PATH=/usr/local/bin:/usr/local/sbin:$PATH
 
 # Node.js Global
@@ -104,7 +94,6 @@ grm() {
 # Uncomment following line if you want red dots to bundlere displayed while waiting for completion
 COMPLETION_WAITING_DOTS="true"
 
-
 # Customize to your needs...
 unsetopt auto_name_dirs
 
@@ -114,14 +103,3 @@ unsetopt correct_all
 function pp() {
   pygmentize -O 'bg=dark,style=vim' -f terminal256 "$1" 
 }
-
-### Zsh Prompt
-ZSH_THEME_GIT_PROMPT_PREFIX="%{$fg[yellow]%} "
-ZSH_THEME_GIT_PROMPT_SUFFIX="%{$reset_color%}"
-ZSH_THEME_GIT_PROMPT_DIRTY="%{$fg[red]%}•" 
-ZSH_THEME_GIT_PROMPT_CLEAN=""
-
-PROMPT='%{$fg[blue]%}>%{$reset_color%} '
-RPROMPT='%{$fg[blue]%}%2c$(git_prompt_info) %{$reset_color%}%{$fg[red]%}$(~/.rvm/bin/rvm-prompt) %{$fg[blue]%}%n@%M%{$reset_color%}'
-
-PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
