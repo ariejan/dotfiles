@@ -13,11 +13,10 @@ call vundle#begin('~/.vundle.local')
 " Let vundle manage vundle
 Bundle 'gmarik/vundle'
 
-" Colours and stuff
-Bundle 'chriskempson/base16-vim'
-
 " Bling
 Bundle 'bling/vim-airline'
+
+Bundle 'altercation/vim-colors-solarized'
 
 " JavaScript / Ember
 Bundle 'pangloss/vim-javascript'
@@ -53,9 +52,6 @@ Bundle 'kchmck/vim-coffee-script'
 " CSS
 Bundle 'hail2u/vim-css3-syntax'
 Bundle 'tpope/vim-haml'
-
-" Fish
-Bundle "dag/vim-fish"
 
 " TMux
 Bundle 'christoomey/vim-tmux-navigator'
@@ -107,7 +103,7 @@ syntax on
 set showmatch "matchin braces
 set background=dark
 
-colorscheme base16-tomorrow
+colorscheme solarized
 
 " Replace Ruby 1.8 Hash syntax with 1.9 Hash syntax_
 nmap <leader>rh :%s/\v:(\w+) \=\>/\1:/g<cr>_ 
