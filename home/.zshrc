@@ -29,6 +29,7 @@ export PATH="/usr/local/heroku/bin:$PATH"
 
 # Map vi to vim, just in case
 alias vi=vim
+alias :e=vim
 
 # Tmux
 alias tl="tmux list-sessions"
