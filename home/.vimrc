@@ -264,6 +264,8 @@ augroup END
 " let &colorcolumn=join(range(80,999),",")
 " highlight ColorColumn ctermbg=235 guibg=#2c2d27
 
+" Configure vim-go
+let g:go_fmt_command = "goimports"
 
 " Configurat gist
 let g:gist_clip_command = 'pbcopy'
