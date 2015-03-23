@@ -6,75 +6,50 @@ set shell=/bin/bash
 
 " Load Vundle, store bundles in ~/.vundle.local
 set rtp+=~/.vim/bundle/vundle/
-"let path = '~/.vundle.local'
-" call vundle#rc(path)
 call vundle#begin('~/.vundle.local')
 
 " Let vundle manage vundle
-Bundle 'gmarik/vundle'
+Plugin 'gmarik/Vundle.vim'
 
 " Bling
-Bundle 'bling/vim-airline'
+Plugin 'bling/vim-airline'
 
-Bundle 'altercation/vim-colors-solarized'
-
-" JavaScript / Ember
-Bundle 'pangloss/vim-javascript'
-Bundle 'mustache/vim-mustache-handlebars'
+Plugin 'altercation/vim-colors-solarized'
 
 " Useful helpers
-Bundle 'tomtom/tcomment_vim'
-Bundle 'tpope/vim-endwise'
-Bundle 'tpope/vim-surround'
-Bundle 'align'
-
-" TDD / BDD
-Bundle 'thoughtbot/vim-rspec'
-Bundle 'tpope/vim-cucumber'
+Plugin 'tomtom/tcomment_vim'
+Plugin 'tpope/vim-endwise'
+Plugin 'tpope/vim-surround'
+Plugin 'align'
 
 " Git / Fugitive
-Bundle 'tpope/vim-fugitive'
-Bundle 'airblade/vim-gitgutter'
-Bundle 'mattn/webapi-vim'
-Bundle 'mattn/gist-vim'
+Plugin 'tpope/vim-fugitive'
+Plugin 'mattn/webapi-vim'
+Plugin 'mattn/gist-vim'
 
 " Markdown
-Bundle 'tpope/vim-markdown'
-
-" Ruby / Rails
-Bundle 'tpope/vim-bundler'
-Bundle 'vim-ruby/vim-ruby'
-Bundle 'tpope/vim-rails'
-
-" JS
-Bundle 'kchmck/vim-coffee-script'
-
-" CSS
-Bundle 'hail2u/vim-css3-syntax'
-Bundle 'tpope/vim-haml'
+Plugin 'tpope/vim-markdown'
 
 " TMux
-Bundle 'christoomey/vim-tmux-navigator'
+Plugin 'christoomey/vim-tmux-navigator'
 
 " Golang
-Bundle 'fatih/vim-go'
+Plugin 'fatih/vim-go'
 
 " Done, finish up Vundle
 call vundle#end()
+
+let g:ruby_path = system('echo $HOME/.rbenv/shims')
 filetype plugin indent on
 
 " To enable vim-airline directly
 set laststatus=2
 
-if !empty($MY_RUBY_HOME)
-  let g:ruby_path = join(split(glob($MY_RUBY_HOME.'/lib/ruby/*.*')."\n".glob($MY_RUBY_HOME.'/lib/rubysite_ruby/*'),"\n"),',')
-endif
-
 " Always work with utf-8
 set encoding=utf-8
 
 " Highlight the cursor line
-set cursorline
+" set cursorline
 " set cursorcolumn
 
 " Automatically update changes on getting focus
@@ -183,35 +158,6 @@ function! StripTrailingWhitespace()
   let @/ = saved_search
 endfunction
 
-" Autocommands
-if has('autocmd')
-    " Remove trailing whitespace from various files
-    autocmd BufWritePre,FileWritePre *.html,*.rb,*.php,*.xml,*.erb call StripTrailingWhitespace()
-
-    " Use 2 spaces for tabs in ruby and associated langs
-    autocmd Filetype coffee,ruby,yaml,rake,rb,ru,javascript setlocal ts=2 sw=2 expandtab
-    autocmd BufNewFile,BufRead {*.rake,Podfile,Gemfile,Guardfile,Capfile,Rakefile,Thorfile,config.ru} set ft=ruby
-    autocmd BufNewFile,BufRead Gemfile.lock set ft=yaml
-    autocmd BufNewFile,BufRead *.json set ft=javascript
-    autocmd BufNewFile,BufRead *.prawn set ft=ruby
-    autocmd BufNewFile,BufRead *.go set ft=go
-
-    " Enable Less syntax
-    autocmd BufRead,BufNewFile *.less set filetype=less
-
-    " Enable SCSS syntax
-    autocmd BufRead,BufNewFile *.scss set filetype=scss
-
-    " Enable soft-wrapping for text files
-    autocmd FileType text,markdown,html,xhtml,eruby setlocal wrap linebreak nolist
-
-    " Auto-resise windows when resizing
-    autocmd VimResized * wincmd =
-
-    " Folding on indent for HAML and coffee-script files
-    autocmd BufNewFile,BufReadPost *.{coffee,haml} setl foldmethod=indent nofoldenable
-endif
-
 " Set open new windows below/to the right
 set sb
 set spr
@@ -224,7 +170,7 @@ set statusline=%t%=%m\ %y\ [%c,%l]
 " match OverLength /\%81v.\+/
 
 " Remap Esc to ii
-imap ii <Esc>
+" imap ii <Esc>
 
 " Airline
 let g:airline_theme='lucius'
@@ -249,16 +195,47 @@ nnoremap <silent> yI  :call <SID>setup_paste()<CR>I
 nnoremap <silent> ygi :call <SID>setup_paste()<CR>gi
 nnoremap <silent> ygI :call <SID>setup_paste()<CR>gI
 
-augroup unimpaired_paste
-  autocmd!
-  autocmd InsertLeave *
-        \ if exists('s:paste') |
-        \   let &paste = s:paste |
-        \   let &mouse = s:mouse |
-        \   unlet s:paste |
-        \   unlet s:mouse |
-        \ endif
-augroup END
+" Autocommands
+if has('autocmd')
+    augroup autocommandbots
+        autocmd!
+        " Remove trailing whitespace from various files
+        autocmd BufWritePre,FileWritePre *.html,*.rb,*.php,*.xml,*.erb call StripTrailingWhitespace()
+
+        " Use 2 spaces for tabs in ruby and associated langs
+        autocmd Filetype coffee,ruby,yaml,rake,rb,ru,javascript setlocal ts=2 sw=2 expandtab
+        autocmd BufNewFile,BufRead {*.rake,Podfile,Gemfile,Guardfile,Capfile,Rakefile,Thorfile,config.ru} set ft=ruby
+        autocmd BufNewFile,BufRead Gemfile.lock set ft=yaml
+        autocmd BufNewFile,BufRead *.json set ft=javascript
+        autocmd BufNewFile,BufRead *.prawn set ft=ruby
+        autocmd BufNewFile,BufRead *.go set ft=go
+
+        " Enable Less syntax
+        autocmd BufRead,BufNewFile *.less set filetype=less
+
+        " Enable SCSS syntax
+        autocmd BufRead,BufNewFile *.scss set filetype=scss
+
+        " Enable soft-wrapping for text files
+        autocmd FileType text,markdown,html,xhtml,eruby setlocal wrap linebreak nolist
+
+        " Auto-resise windows when resizing
+        autocmd VimResized * wincmd =
+
+        " Folding on indent for HAML and coffee-script files
+        autocmd BufNewFile,BufReadPost *.{coffee,haml} setl foldmethod=indent nofoldenable
+
+        " Unimpaired paste
+        autocmd InsertLeave *
+            \ if exists('s:paste') |
+            \   let &paste = s:paste |
+            \   let &mouse = s:mouse |
+            \   unlet s:paste |
+            \   unlet s:mouse |
+            \ endif
+    augroup END
+endif
+
 
 " Mark the 79-character limit
 " let &colorcolumn=join(range(80,999),",")
@@ -267,7 +244,7 @@ augroup END
 " Configure vim-go
 let g:go_fmt_command = "goimports"
 
-" Configurat gist
+" Configure gist
 let g:gist_clip_command = 'pbcopy'
 let g:gist_detect_filetype = 1
 let g:gist_post_private = 1
