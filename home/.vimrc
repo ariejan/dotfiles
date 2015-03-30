@@ -11,10 +11,12 @@ call vundle#begin('~/.vundle.local')
 " Let vundle manage vundle
 Plugin 'gmarik/Vundle.vim'
 
+" CtrlP
+Plugin 'kien/ctrlp.vim'
+
 " Bling
 Plugin 'bling/vim-airline'
-
-Plugin 'altercation/vim-colors-solarized'
+Plugin 'trusktr/seti.vim'
 
 " Useful helpers
 Plugin 'tomtom/tcomment_vim'
@@ -78,7 +80,7 @@ syntax on
 set showmatch "matchin braces
 set background=dark
 
-colorscheme solarized
+colorscheme seti
 
 " Replace Ruby 1.8 Hash syntax with 1.9 Hash syntax_
 nmap <leader>rh :%s/\v:(\w+) \=\>/\1:/g<cr>_ 
@@ -173,7 +175,6 @@ set statusline=%t%=%m\ %y\ [%c,%l]
 " imap ii <Esc>
 
 " Airline
-let g:airline_theme='lucius'
 let g:airline_powerline_fonts=1
 
 " Easy pasting, ripped from tpope/vim-unimpaired

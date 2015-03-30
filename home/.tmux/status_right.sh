@@ -24,25 +24,29 @@ prompt_end() {
     echo " "
 }
 
+prompt_date_clock() {
+    when=$(date "+%H:%M +%d/%m/%y")
+    prompt_segment "#444444" "#ffffff" "◷ $when"
+}
+
 prompt_date() {
-    when=$(date "+%d/%m/%Y")
-    prompt_segment "#9aba75" "#ffffff" "$when"
+    when=$(date "+%d/%m/%y")
+    prompt_segment "#17297c" "#031770" "$when"
 }
 
 prompt_clock() {
     time=$(date "+%H:%M")
-    prompt_segment "#72b9ba" "#ffffff" "◷ $time"
+    prompt_segment "#1AE1FD" "#031770" "◷ $time"
 }
 
 prompt_boxname() {
     name=$(hostname)
-    prompt_segment "#dd9975" "#ffffff" "$name"
+    prompt_segment "#dfff00" "#202020" "$name"
 }
 
 build_prompt() {
     RETVAL=$?
-    prompt_date
-    prompt_clock
+    prompt_date_clock
     prompt_boxname
     prompt_end
 }

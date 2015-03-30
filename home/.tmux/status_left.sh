@@ -31,12 +31,12 @@ prompt_end() {
 }
 
 prompt_context() {
-  prompt_segment "#3c3c3c" "#ffffff" "❐ #S"
+  prompt_segment "#dfff00" "#202020" "❐ #S"
 }
 
 prompt_boxname() {
     name=$(box_name)
-    prompt_segment "#dd9975" "#ffffff" "$name"
+    prompt_segment "#363636" "#363636" "$name"
 }
 
 build_prompt() {
