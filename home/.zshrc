@@ -93,3 +93,6 @@ unsetopt auto_name_dirs
 
 # Disable the mostly annoying auto correct
 unsetopt correct_all
+
+# Load keys into ssh-agent
+ssh-add &>/dev/null
