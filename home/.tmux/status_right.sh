@@ -25,7 +25,7 @@ prompt_end() {
 }
 
 prompt_date_clock() {
-    when=$(date "+%H:%M +%d/%m/%y")
+    when=$(date "+%Y-%m-%d %H:%M")
     prompt_segment "#444444" "#ffffff" "◷ $when"
 }
 
