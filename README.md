@@ -2,7 +2,7 @@ These are my personal dotfiles. Feel free to browse through them and copy whatev
 
 To use this:
 
- 1. Install Homebrew
+ 1. Install Homebrew (if OS X)
  
     ```
     ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
@@ -12,6 +12,17 @@ To use this:
  
     ```
     brew install zsh
+    ```
+    
+    or
+    
+    ```
+    sudo apt-get install zsh
+    ```
+    
+    And change your shell to ZSH
+    
+    ```
     chsh -s /usr/local/bin/zsh
     ```
  
@@ -21,7 +32,13 @@ To use this:
     curl -L https://raw.githubusercontent.com/zsh-users/antigen/master/antigen.zsh > ~/.antigen.zsh
     ```
     
- 4. Install homesick
+ 4. Install Autoenv
+ 
+   ```
+   git clone git://github.com/kennethreitz/autoenv.git ~/.autoenv
+   ```
+   
+ 5. Install homesick
 
     ```
     gem install homesick
@@ -29,9 +46,11 @@ To use this:
     homesick symlink dotfiles    
     ```
 
- 5. Close and re-start your terminal to load ZSH and Antigen properly
+ 6. Close and re-start your terminal to load ZSH and Antigen properly
+ 
+    This will take a moment as it will install the appropriate ZSH plugins.
 
- 6. Install Vim plugins using vundle
+ 7. Install Vim plugins using vundle
  
     ```
     cd ~/.homesick/repos/dotfiles
@@ -44,5 +63,5 @@ To use this:
     ```
     git clone https://github.com/sstephenson/rbenv.git ~/.rbenv
     git clone https://github.com/sstephenson/ruby-build.git ~/.rbenv/plugins/ruby-build
-    rbenv install 2.1.5
+    rbenv install 2.2.2
     ```
