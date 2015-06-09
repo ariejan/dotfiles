@@ -1,0 +1,33 @@
+"*":
+  "exception-reporting":
+    userId: "4f4394d0-618a-6080-03b9-fce06d9f2bd7"
+  "release-notes":
+    viewedVersion: "0.94.0"
+  welcome:
+    showOnStartup: false
+  metrics:
+    userId: "385fdb74732583b98b871475db8af271ec14f830"
+  editor:
+    invisibles:
+      {}
+    fontSize: 12
+  core:
+    ignoredNames: [
+      ".git"
+      ".svn"
+      ".DS_Store"
+    ]
+    disabledPackages: [
+      "vim-mode"
+    ]
+    projectHome: "/Users/ariejan/src"
+    themes: [
+      "atom-light-ui"
+      "atom-light-syntax"
+    ]
+  linter:
+    {}
+  "autocomplete-plus":
+    {}
+  "go-plus":
+    {}
