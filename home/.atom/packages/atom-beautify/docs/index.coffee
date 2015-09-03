@@ -9,6 +9,13 @@ console.log('Generating options...')
 beautifier = new Beautifiers()
 languageOptions = beautifier.options
 packageOptions = require('../src/config.coffee')
+# Build options by Beautifier
+beautifierOptions = {}
+for optionName, optionDef of languageOptions
+    beautifiers = optionDef.beautifiers ? []
+    for beautifierName in beautifiers
+        beautifierOptions[beautifierName] ?= {}
+        beautifierOptions[beautifierName][optionName] = optionDef
 
 console.log('Loading options template...')
 optionsTemplatePath = __dirname + '/options-template.md'
@@ -20,9 +27,24 @@ optionTemplate = fs.readFileSync(optionTemplatePath).toString()
 console.log('Building documentation from template and options...')
 Handlebars.registerPartial('option', optionTemplate)
 template = Handlebars.compile(optionsTemplate)
+
+linkifyTitle = (title) ->
+    title = title.toLowerCase()
+    p = title.split(/[\s,+#;,\/?:@&=+$]+/) # split into parts
+    sep = "-"
+    p.join(sep)
+
+Handlebars.registerHelper('linkify', (title, options) ->
+    return new Handlebars.SafeString(
+        "[#{options.fn(this)}](\##{linkifyTitle(title)})"
+    )
+)
+
+
 context = {
     packageOptions: packageOptions
     languageOptions: languageOptions
+    beautifierOptions: beautifierOptions
 }
 result = template(context)
 

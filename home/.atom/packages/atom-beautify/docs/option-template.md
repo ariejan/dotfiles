@@ -1,4 +1,4 @@
-### {{#if title}} {{title}} {{else}} `{{@key}}` {{/if}}
+#### {{#if title}} {{#linkify title}}{{title}}{{/linkify}} {{else}} {{#linkify @key}}`{{@key}}`{{/linkify}} {{/if}}
 
 **Key**: `{{@key}}`
 {{#if default}}
@@ -11,7 +11,12 @@
 
 **Enum**: {{#each enum}} `{{this}}` {{/each}}
 {{/if}}
+{{#if beautifiers}}  
+
+**Supported Beautifiers**: {{#each beautifiers}} {{#linkify this}}`{{this}}`{{/linkify}} {{/each}}
+{{/if}}
 
 **Description**:
 
 {{description}}
+

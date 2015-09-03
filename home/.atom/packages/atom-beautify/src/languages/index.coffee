@@ -12,6 +12,7 @@ module.exports = class Languages
   # Supported unique configuration keys
   # Used for detecting nested configurations in .jsbeautifyrc
   languageNames: [
+    "arduino"
     "c-sharp"
     "c"
     "coffeescript"
@@ -21,6 +22,7 @@ module.exports = class Languages
     "d"
     "ejs"
     "erb"
+    "gherkin"
     "go"
     "fortran"
     "handlebars"
@@ -37,6 +39,7 @@ module.exports = class Languages
     "pawn"
     "perl"
     "php"
+    "puppet"
     "python"
     "ruby"
     "rust"
@@ -44,6 +47,7 @@ module.exports = class Languages
     "scss"
     "spacebars"
     "sql"
+    "svg"
     "swig"
     "tss"
     "twig"
@@ -67,19 +71,19 @@ module.exports = class Languages
   Constructor
   ###
   constructor: ->
-      @languages = _.map(@languageNames, (name) ->
-          require("./#{name}")
-      )
-      @namespaces = _.map(@languages, (language) -> language.namespace)
+    @languages = _.map(@languageNames, (name) ->
+      require("./#{name}")
+    )
+    @namespaces = _.map(@languages, (language) -> language.namespace)
 
   ###
   Get language for grammar and extension
   ###
   getLanguages: ({name, namespace, grammar, extension}) ->
-    #   console.log('getLanguages', name, namespace, grammar, extension, @languages)
-      _.union(
-          _.filter(@languages, (language) -> _.isEqual(language.name, name))
-          _.filter(@languages, (language) -> _.isEqual(language.namespace, namespace))
-          _.filter(@languages, (language) -> _.contains(language.grammars, grammar))
-          _.filter(@languages, (language) -> _.contains(language.extensions, extension))
-      )
+    # console.log('getLanguages', name, namespace, grammar, extension, @languages)
+    _.union(
+      _.filter(@languages, (language) -> _.isEqual(language.name, name))
+      _.filter(@languages, (language) -> _.isEqual(language.namespace, namespace))
+      _.filter(@languages, (language) -> _.contains(language.grammars, grammar))
+      _.filter(@languages, (language) -> _.contains(language.extensions, extension))
+    )

@@ -8,6 +8,7 @@ Gocover = require('./gocover')
 Executor = require('./executor')
 Environment = require('./environment')
 GoExecutable = require('./goexecutable')
+Godef = require('./godef')
 SplicerSplitter = require('./util/splicersplitter')
 _ = require('underscore-plus')
 {MessagePanelView, LineMessageView, PlainMessageView} = require('atom-message-panel')
@@ -39,6 +40,7 @@ class Dispatch
     @gopath = new Gopath(this)
     @gobuild = new Gobuild(this)
     @gocover = new Gocover(this)
+    @godef = new Godef(this)
 
     @messagepanel = new MessagePanelView({title: '<span class="icon-diff-added"></span> go-plus', rawTitle: true}) unless @messagepanel?
 
@@ -73,12 +75,14 @@ class Dispatch
     @govet.destroy()
     @gopath.destroy()
     @gofmt.destroy()
+    @godef.destroy()
     @gocover = null
     @gobuild = null
     @golint = null
     @govet = null
     @gopath = null
     @gofmt = null
+    @godef = null
     @ready = false
     @activated = false
     @emit('destroyed')
@@ -192,13 +196,13 @@ class Dispatch
       if go.cover()? and go.cover() isnt false
         @messagepanel.add(new PlainMessageView({raw: true, message: '<b>Cover Tool:</b> ' + go.cover(), className: 'text-subtle'}))
       else
-        @messagepanel.add(new PlainMessageView({raw: true, message: '<b>Cover Tool:</b> Not Found (Is Mercurial Installed?)', className: 'text-error'}))
+        @messagepanel.add(new PlainMessageView({raw: true, message: '<b>Cover Tool:</b> Not Found', className: 'text-error'}))
 
       # vet
       if go.vet()? and go.vet() isnt false
         @messagepanel.add(new PlainMessageView({raw: true, message: '<b>Vet Tool:</b> ' + go.vet(), className: 'text-subtle'}))
       else
-        @messagepanel.add(new PlainMessageView({raw: true, message: '<b>Vet Tool:</b> Not Found (Is Mercurial Installed?)', className: 'text-error'}))
+        @messagepanel.add(new PlainMessageView({raw: true, message: '<b>Vet Tool:</b> Not Found', className: 'text-error'}))
 
       # gofmt / goimports
       if go.format()? and go.format() isnt false
@@ -218,6 +222,12 @@ class Dispatch
       else
         @messagepanel.add(new PlainMessageView({raw: true, message: '<b>Gocode Tool:</b> Not Found', className: 'text-error'}))
 
+      # godef
+      if go.godef()? and go.godef() isnt false
+        @messagepanel.add(new PlainMessageView({raw: true, message: '<b>Godef Tool:</b> ' + go.godef(), className: 'text-subtle'}))
+      else
+        @messagepanel.add(new PlainMessageView({raw: true, message: '<b>Godef Tool:</b> Not Found', className: 'text-error'}))
+
       # gocode active
       if _.contains(atom.packages.getAvailablePackageNames(), 'autocomplete-plus')
         @messagepanel.add(new PlainMessageView({raw: true, message: '<b>Gocode Status:</b> Enabled', className: 'text-subtle'}))
@@ -235,12 +245,6 @@ class Dispatch
         @messagepanel.add(new PlainMessageView({raw: true, message: '<b>Git:</b> ' + go.git(), className: 'text-subtle'}))
       else
         @messagepanel.add(new PlainMessageView({raw: true, message: '<b>Git:</b> Not Found', className: 'text-warning'}))
-
-      # hg
-      if go.hg()? and go.hg() isnt false
-        @messagepanel.add(new PlainMessageView({raw: true, message: '<b>Mercurial:</b> ' + go.hg(), className: 'text-subtle'}))
-      else
-        @messagepanel.add(new PlainMessageView({raw: true, message: '<b>Mercurial:</b> Not Found', className: 'text-warning'}))
 
       # PATH
       thepath = if os.platform() is 'win32' then @env()?.Path else @env()?.PATH

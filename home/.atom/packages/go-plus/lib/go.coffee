@@ -82,14 +82,14 @@ class Go
   gocode: ->
     return @gopathBinOrPathItem('gocode')
 
+  godef: ->
+    return @goTooldirOrGopathBinOrPathItem('godef')
+
   oracle: ->
     return @gopathBinOrPathItem('oracle')
 
   git: ->
     return @pathItem('git')
-
-  hg: ->
-    return @pathItem('hg')
 
   goTooldirOrGopathBinOrPathItem: (name) ->
     result = @goTooldirItem(name)
@@ -149,5 +149,5 @@ class Go
     return true if @gocode() is false
     return true if @oracle() is false
     return true if @git() is false
-    return true if @hg() is false
+    return true if @godef() is false
     return false

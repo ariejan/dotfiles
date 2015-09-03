@@ -1,7 +1,7 @@
 {
   "name": "unity-ui",
   "theme": "ui",
-  "version": "2.0.11",
+  "version": "2.1.0",
   "main": "./lib/unity-ui",
   "private": false,
   "description": "An Atom theme for a more native experience on OS X.",
@@ -19,10 +19,10 @@
     "url": "https://github.com/orderedlist/unity-ui/issues"
   },
   "homepage": "https://github.com/orderedlist/unity-ui",
-  "_id": "unity-ui@2.0.11",
-  "_shasum": "63568d23940f48049df45a7da02a7c29ec2280fa",
-  "_resolved": "file:../d-11558-8558-u1qrg/package.tgz",
-  "_from": "../d-11558-8558-u1qrg/package.tgz",
+  "_id": "unity-ui@2.1.0",
+  "_shasum": "c75a0e8cd1e74c53ac82166a9f0f24614be99451",
+  "_resolved": "file:../d-115713-44102-no3o6r/package.tgz",
+  "_from": "../d-115713-44102-no3o6r/package.tgz",
   "_atomModuleCache": {
     "version": 1,
     "dependencies": [],
