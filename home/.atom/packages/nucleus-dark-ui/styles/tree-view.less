@@ -1,3 +1,7 @@
+@import "ui-variables.less";
+@import "ui-mixins.less";
+@import "octicon-mixins";
+
 atom-workspace {
   .tree-view {
     .text(normal);
@@ -18,7 +22,7 @@ atom-workspace {
           color: @text-color-highlight;
           transition: all @transition-time ease;
 
-          &:before {
+          &.icon:before {
             display: none;
           }
         }
@@ -54,6 +58,7 @@ atom-workspace {
           }
         }
       }
+
       & > .entries {
         opacity: 1;
         padding-bottom: @component-padding;

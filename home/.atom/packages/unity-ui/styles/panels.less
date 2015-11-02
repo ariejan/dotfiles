@@ -42,7 +42,7 @@ atom-panel {
   border-top: 1px solid fade(@panel-heading-border-color, 50%);
   border-bottom: 1px solid @panel-heading-border-color;
   background-color: @panel-heading-background-color;
-  font-weight:500;
+  font-weight:600;
 
   &:first-of-type {
     border-top:none;
@@ -52,10 +52,13 @@ atom-panel {
 .status-bar {
   color: fadeout(@text-color-highlight, 30%);
   height:26px;
-  line-height:23px;
-  padding:0;
+  line-height:16px;
   background:linear-gradient(#e4e4e4, #d8d8d8);
   border-color:#a1a1a1;
+
+  .flexbox-repaint-hack {
+    padding:3px 0;
+  }
 
   .status-bar-left {
     margin-left:@component-padding;

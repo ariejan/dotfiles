@@ -1,8 +1,16 @@
+@import "ui-variables.less";
+@import "ui-mixins.less";
+@import "octicon-mixins";
+
 // Buttons ---------------------------------------------------------------------
+button,
+button.icon,
+.btn-default,
 .btn {
   .button(@button-border-color);
 
-  &:focus, &:active:focus {
+  &:focus,
+  &:active:focus {
     outline: 0;
     border: 1px solid @text-color-selected !important;
   }
@@ -31,68 +39,112 @@
   &.btn-primary {
     .button-variant(@text-color-info);
   }
+
   &.btn-info {
     .button-variant(@text-color-info);
   }
+
   &.btn-success {
     .button-variant(@text-color-success);
   }
+
   &.btn-warning {
     .button-variant(@text-color-warning);
   }
+
   &.btn-error {
     .button-variant(@text-color-error);
   }
+
   &.status-indicator {
     border-width: 0 !important;
+  }
+}
+
+.btn-group {
+  & > .btn:first-child {
+    border-left: 1px solid @button-border-color;
+  }
+
+  & > .btn:last-child {
+    border-right: 1px solid @button-border-color;
   }
 }
 
 // Mixins ----------------------------------------------------------------------
 .button(@color) {
   color: @text-color;
-  font-family: @font-family;
-  font-size: @font-size;
-  letter-spacing: 0.04em;
-  font-weight: 300;
+  font-size: 12px;
+  font-weight: 400;
   background: transparent;
   height: @input-height;
-  height: @input-height - 2px;
+  line-height: @input-height;
   border-radius: @component-border-radius;
-  border: 1px solid @color !important;
+  border-color: @color;
+  border-width: 1px !important;
+  border-style: solid !important;
   box-shadow: none !important;
   transition: all @transition-time ease;
+  padding: 0 10px;
 
   &:focus {
     outline: none;
   }
+
   &:focus,
-  &[disabled],
   &:hover {
-    color: @text-color-highlight;
+    color: @base-background-color;
     background: @color;
+    border-color: @color;
   }
-  &:active {
-    color: @text-color-selected;
+
+  &:active,
+  &:active:focus {
+    color: @base-background-color;
     background: @color;
     border: 1px solid @text-color-selected !important;
   }
+
   &.selected {
-    color: @text-color-selected;
+    color: @base-background-color;
     background: @button-background-color-selected;
+    border: 1px solid @color !important;
 
     &:hover {
-      border: 1px solid @background-color-highlight !important;
+      color: @base-background-color;
+      border: 1px solid @text-color-highlight !important;
       background: @color;
     }
+  }
+
+  &[disabled] {
+    opacity: 1;
+    background-color: transparent;
+    border-color: transparent !important;
+    color: @text-color-subtle !important;
   }
 }
 
 .button-variant(@color) {
   .button(@color);
   color: @color;
+  border-color: @color !important;
 
+  &:hover {
+    border-color: @color !important;
+  }
   &.selected {
     color: @color;
   }
+
+  &[disabled] {
+    opacity: 1;
+    background-color: transparent;
+    border-color: transparent !important;
+    color: @text-color-subtle !important;
+  }
+}
+
+button[click="cancel"] {
+  .button-variant(@text-color-error) !important;
 }

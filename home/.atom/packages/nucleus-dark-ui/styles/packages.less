@@ -1,8 +1,27 @@
-// linter ----------------------------------------------------------------------
-linter-panel:empty {
-  display: none;
+@import "ui-variables.less";
+@import "ui-mixins.less";
+@import "octicon-mixins";
+
+// autocomplete-plus -----------------------------------------------------------
+autocomplete-suggestion-list.select-list.popover-list ol.list-group li > .word-container,
+autocomplete-suggestion-list.select-list.popover-list ol.list-group li > .word-container span {
+  font-family: Menlo, Consolas, 'DejaVu Sans Mono', monospace;
 }
 
+autocomplete-suggestion-list.select-list.popover-list .suggestion-description-content {
+  color: @text-color;
+}
+
+
+// mini-map --------------------------------------------------------------------
+atom-text-editor::shadow atom-text-editor-minimap::shadow .minimap-visible-area,
+atom-text-editor atom-text-editor-minimap::shadow .minimap-visible-area,
+html atom-text-editor-minimap::shadow .minimap-visible-area {
+  opacity: 1.0;
+  background-color: fade(@theme-background-color-light, 32%);
+}
+
+// linter ----------------------------------------------------------------------
 .linter-tab {
   background: transparent;
   transition: color @transition-time ease, background @transition-time ease;
@@ -30,9 +49,25 @@ linter-panel:empty {
   padding-right: @component-padding;
 }
 
+linter-panel:empty {
+  display: none;
+}
+
 // deprecation-cop -------------------------------------------------------------
-.deprecation-cop .deprecation-info:hover {
-  background: transparent !important;
+.deprecation-cop {
+  .deprecation-info:hover {
+    background: transparent !important;
+  }
+
+  .list-item:hover {
+    color: @text-color !important;
+  }
+
+  .stack-trace {
+    border-radius: @component-border-radius;
+    margin-right: @component-padding;
+    margin-top: @component-padding;
+  }
 }
 
 // timecop ---------------------------------------------------------------------
@@ -40,22 +75,20 @@ linter-panel:empty {
   background: @app-background-color;
 }
 
-// tool-panel-background-color -------------------------------------------------
+// tool-bar --------------------------------------------------------------------
 .tool-bar {
   border: 0;
   background: @tool-panel-background-color;
-
-  button {
-    font-weight: 100;
-  }
-  button:before {
-    font-weight: 100;
-  }
 }
 
 .tool-bar button.tool-bar-btn {
-  border-color: transparent !important;
+  border: 0 !important;
   background: transparent;
+
+  &:hover {
+    color: @text-color-highlight;
+    background: transparent;
+  }
 }
 
 .tool-bar-spacer {
@@ -63,14 +96,23 @@ linter-panel:empty {
   border-top-color: transparent !important;
 }
 
+.tool-bar.tool-bar-vertical .tool-bar-spacer {
+  border-bottom: 1px solid @base-border-color;
+  border-top-color: transparent !important;
+}
+
+.tool-bar.tool-bar-horizontal .tool-bar-spacer {
+  border-right: 1px solid @base-border-color;
+  border-left-color: transparent !important;
+}
+
 // markdown-preview ------------------------------------------------------------
 .markdown-preview {
   color: @markdown-preview-color;
   background-color: @markdown-preview-background-color;
 
-
-  h1, h2 {
-    color: inherit;
+  h1,
+  h2 {
     border-color: @markdown-preview-border-color;
   }
 
@@ -93,11 +135,14 @@ linter-panel:empty {
     td {
       border-color: @markdown-preview-border-color;
     }
+
     th {
       background-color: lighten(@markdown-preview-background-color, 3%);
     }
+
     tr {
       background-color: @markdown-preview-background-color;
+
       &:nth-child(2n) {
         background-color: darken(@markdown-preview-background-color, 3%);
       }
@@ -116,4 +161,236 @@ linter-panel:empty {
       background-color: transparent;
     }
   }
+}
+
+// expose ----------------------------------------------------------------------
+atom-panel.modal.overlay.from-top.expose-panel {
+  top: 0 !important;
+  border: 0 !important;
+}
+
+.expose-top {
+  height: 32px;
+
+  a {
+    display: none;
+  }
+}
+
+.expose-view .tab-list .tab {
+  border-radius: @component-border-radius !important;
+  border: 1px solid @base-border-color !important;
+  .overlay-shadow();
+
+  &:hover {
+    .tab-header {
+      background: @tab-background-color-hover;
+
+      .title {
+        color: @text-color-highlight;
+      }
+    }
+
+    .tab-body {
+      box-shadow: none;
+    }
+  }
+
+  .tab-header {
+    cursor: default;
+    transition: background @transition-time ease;
+
+    .title {
+      transition: color @transition-time ease;
+      margin-top: -4px;
+    }
+
+    .close-icon {
+      float: right;
+      transition-duration: @transition-time;
+      cursor: default;
+      height: 16px;
+      width: 16px;
+      border-radius: 2px;
+
+      &:hover {
+        background: @tab-background-color;
+      }
+
+      &:before {
+        color: @text-color-highlight;
+        position: absolute;
+        font-size: 12px;
+        width: 13px;
+        height: 12px;
+        top: 2px;
+        left: 2px;
+      }
+    }
+  }
+
+  .tab-body {
+    border-top: 1px solid @base-border-color !important;
+    cursor: default;
+  }
+}
+
+.platform-darwin .expose-view .tab-list .tab .tab-header .close-icon {
+  float: left !important;
+  left: 4px !important;
+  right: auto !important;
+}
+
+// atom-runner -----------------------------------------------------------------
+.atom-runner {
+  background: @base-background-color;
+}
+
+// imdone-atom -----------------------------------------------------------------
+.imdone-atom .imdone-board-wrapper .imdone-board {
+  .list {
+    background: @base-background-color;
+  }
+
+  .badge {
+    margin-right: 4px;
+  }
+}
+
+// clipboard-plus --------------------------------------------------------------
+atom-panel.clipboard-plus > .select-list > atom-text-editor[mini]:before {
+  content: "\f035" !important;
+}
+
+// project-manager -------------------------------------------------------------
+.project-manager atom-text-editor[mini]:before,
+.project-manager-dialog atom-text-editor[mini]:before {
+  content: "\f001" !important;
+}
+
+// git-control -----------------------------------------------------------------
+.git-control .logger pre {
+  font-family: Menlo, Consolas, 'DejaVu Sans Mono', monospace;
+  border: 0;
+}
+
+.git-control .dialog button {
+  .button(@button-border-color);
+}
+
+.git-control .dialog input,
+.git-control .dialog select,
+.git-control .dialog textarea {
+  .button(@button-border-color);
+  .text(normal);
+  height: @input-height;
+  line-height: @input-height;
+  text-transform: none;
+
+  &:focus,
+  &:hover {
+    background: @background-color-highlight;
+    color: @text-color;
+  }
+}
+
+.git-control .dialog select {
+  -webkit-appearance: menulist;
+  -moz-appearance: menulist;
+  appearance: menulist;
+}
+
+.git-control .dialog textarea {
+  height: auto;
+
+  &:focus,
+  &:active {
+    background: @base-background-color;
+    border: 1px solid @text-color-highlight !important;
+    color: @text-color-highlight;
+  }
+}
+
+
+// foldingtext-for-atom --------------------------------------------------------
+ft-outline-editor {
+  .text(normal);
+}
+
+ft-text-input {
+  atom-text-editor[mini] {
+    .text(normal);
+    height: 18px;
+    width: 128px !important;
+    line-height: 18px;
+    font-size: 10px;
+    padding-left: 4px !important;
+    padding-right: 4px !important;
+
+    &::shadow .placeholder-text,
+    .placeholder-text {
+        .text(subtle);
+        height: 18px !important;
+        line-height: 14px !important;
+        font-size: 10px !important;
+      }
+  }
+
+  .icon-remove-close {
+    right: 4px !important;
+  }
+}
+
+// remote-sync -----------------------------------------------------------------
+atom-panel.modal > .remote-sync {
+  &:before {
+    .text(heading);
+    font-size: 24px;
+    margin-left: -@component-padding*2;
+    margin-right: -@component-padding*2;
+    margin-bottom: @component-padding*2;
+    padding-left: @component-padding*2;
+    padding-right: @component-padding*2;
+    padding-bottom: @component-padding;
+    display: block;
+    border-bottom: 1px solid @base-border-color;
+    content: "Remote Sync";
+  }
+
+  label {
+    margin-top: @component-padding;
+    margin-bottom: 0;
+  }
+
+  atom-text-editor[mini] {
+    height: @font-size + @component-padding;
+    line-height: @font-size + @component-padding;
+    font-size: @font-size;
+    border-bottom: 0;
+    margin-bottom: @component-padding/2;
+
+    &:before {
+      content: "";
+      padding: 0;
+    }
+
+    .placeholder-text,
+    &::shadow .placeholder-text {
+      height: @font-size + @component-padding;
+      line-height: @font-size + @component-padding;
+      font-size: @font-size;
+    }
+  }
+}
+
+// atom-jshint -----------------------------------------------------------------
+atom-text-editor::shadow .gutter .line-number.cursor-line.atom-jshint-error,
+:host .gutter .line-number.cursor-line.atom-jshint-error,
+atom-text-editor::shadow .gutter .line-number.atom-jshint-error,
+:host .gutter .line-number.atom-jshint-error {
+  color: @text-color-error !important;
+}
+
+#jshint-status-pane {
+  border-top: 0;
 }

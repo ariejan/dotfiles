@@ -16,8 +16,8 @@ module.exports = class PrettyDiff extends Beautifier
       ]
       cssinsertlines: "newline_between_rules"
       comments: ["indent_comments", (indent_comments) ->
-        if (indent_comments is true) then \
-          "indent" else "noindent"
+        if (indent_comments is false) then \
+          "noindent" else "indent"
       ]
       force: "force_indentation"
       quoteConvert: "convert_quotes"
@@ -27,6 +27,8 @@ module.exports = class PrettyDiff extends Beautifier
       ]
       wrap: "wrap_line_length"
       space: "space_after_anon_function"
+      noleadzero: "no_lead_zero"
+      endcomma: "end_with_comma"
     # Apply language-specific options
     CSV: true
     ERB: true
