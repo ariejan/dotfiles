@@ -38,6 +38,9 @@ Plugin 'christoomey/vim-tmux-navigator'
 " Golang
 Plugin 'fatih/vim-go'
 
+" Coffeescript
+Plugin 'kchmck/vim-coffee-script'
+
 " Done, finish up Vundle
 call vundle#end()
 
@@ -68,6 +71,8 @@ let g:gitgutter_eager = 1
 set wildmenu
 set wildmode=list:longest
 set wildignore+=tmp,.bundle,.sass-cache,.git,.svn,.hg
+
+set lazyredraw  
 
 " Disable audible bell
 set visualbell
@@ -132,6 +137,8 @@ set hlsearch
 set incsearch
 set ignorecase
 set smartcase
+
+nnoremap <leader><space> :nohlsearch<CR>
 
 " Set terminal title
 set title
