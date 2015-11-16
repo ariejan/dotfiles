@@ -96,3 +96,5 @@ unsetopt correct_all
 
 # Load keys into ssh-agent
 ssh-add &>/dev/null
+
+alias asml="source $HOME/envs/asml.env"
