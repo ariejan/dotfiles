@@ -101,6 +101,9 @@ set bs=indent,eol,start
 set nowrap
 set linebreak
 
+" Map leader key
+let mapleader=","
+
 " Make sure we use editor lines, not real lines when navigating
 nnoremap j gj
 nnoremap k gk
@@ -257,3 +260,7 @@ let g:gist_clip_command = 'pbcopy'
 let g:gist_detect_filetype = 1
 let g:gist_post_private = 1
 let g:gist_open_browser_after_post = 1
+
+" Explore
+map <leader>f :Explore<cr>
+let g:netrw_liststyle=3
