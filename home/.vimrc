@@ -41,6 +41,9 @@ Plugin 'fatih/vim-go'
 " Coffeescript
 Plugin 'kchmck/vim-coffee-script'
 
+" Ember et. al.
+Plugin 'mustache/vim-mustache-handlebars'
+
 " Done, finish up Vundle
 call vundle#end()
 
@@ -254,6 +257,9 @@ endif
 
 " Configure vim-go
 let g:go_fmt_command = "goimports"
+
+" Configure copy/paste to system
+set clipboard=unnamed
 
 " Configure gist
 let g:gist_clip_command = 'pbcopy'
