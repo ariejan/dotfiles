@@ -16,13 +16,13 @@ Plugin 'kien/ctrlp.vim'
 
 " Bling
 Plugin 'bling/vim-airline'
-Plugin 'trusktr/seti.vim'
 
 " Useful helpers
 Plugin 'tomtom/tcomment_vim'
 Plugin 'tpope/vim-endwise'
 Plugin 'tpope/vim-surround'
 Plugin 'align'
+Plugin 'tpope/vim-sleuth'
 
 " Git / Fugitive
 Plugin 'tpope/vim-fugitive'
@@ -38,11 +38,12 @@ Plugin 'christoomey/vim-tmux-navigator'
 " Golang
 Plugin 'fatih/vim-go'
 
-" Coffeescript
-Plugin 'kchmck/vim-coffee-script'
+" Ruby etc.
+Plugin 'vim-ruby/vim-ruby'
 
-" Ember et. al.
-Plugin 'mustache/vim-mustache-handlebars'
+" Pretty colours
+Plugin 'fcpg/vim-fahrenheit'
+
 
 " Done, finish up Vundle
 call vundle#end()
@@ -88,14 +89,13 @@ syntax on
 set showmatch "matchin braces
 set background=dark
 
-colorscheme seti
+colorscheme fahrenheit
 
 " Replace Ruby 1.8 Hash syntax with 1.9 Hash syntax_
 nmap <leader>rh :%s/\v:(\w+) \=\>/\1:/g<cr>_ 
 
 " Font see dotfiles/data
-" set guifont=Menlo:h12
-set guifont=Droid\ Sans\ Mono\ for\ Powerline:h12
+set guifont=DejaVu\ Sans\ Mono\ for\ Powerline:h12
 
 " Intuitive backspace
 set bs=indent,eol,start
