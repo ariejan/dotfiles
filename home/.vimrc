@@ -42,7 +42,7 @@ Plugin 'fatih/vim-go'
 Plugin 'vim-ruby/vim-ruby'
 
 " Pretty colours
-Plugin 'fcpg/vim-fahrenheit'
+Plugin 'dracula/vim'
 
 
 " Done, finish up Vundle
@@ -89,7 +89,7 @@ syntax on
 set showmatch "matchin braces
 set background=dark
 
-colorscheme fahrenheit
+colorscheme dracula
 
 " Replace Ruby 1.8 Hash syntax with 1.9 Hash syntax_
 nmap <leader>rh :%s/\v:(\w+) \=\>/\1:/g<cr>_ 
