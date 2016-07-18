@@ -51,6 +51,9 @@ call vundle#end()
 let g:ruby_path = system('echo $HOME/.rbenv/shims')
 filetype plugin indent on
 
+" Map leader key
+let mapleader=","
+
 " To enable vim-airline directly
 set laststatus=2
 
@@ -104,9 +107,6 @@ set bs=indent,eol,start
 set nowrap
 set linebreak
 
-" Map leader key
-let mapleader=","
-
 " Make sure we use editor lines, not real lines when navigating
 nnoremap j gj
 nnoremap k gk
@@ -143,8 +143,7 @@ set hlsearch
 set incsearch
 set ignorecase
 set smartcase
-
-nnoremap <leader><space> :nohlsearch<CR>
+nnoremap <leader><space> :noh<CR>
 
 " Set terminal title
 set title
