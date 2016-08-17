@@ -85,6 +85,11 @@ alias bi="bundle install"
 alias be="bundle exec"
 alias bu="bundle update"
 
+# Hanami
+alias h="hanami"
+alias hg="hanami generate"
+alias ha="hanami action"
+
 # Uncomment following line if you want red dots to bundlere displayed while waiting for completion
 COMPLETION_WAITING_DOTS="true"
 
@@ -96,5 +101,3 @@ unsetopt correct_all
 
 # Load keys into ssh-agent
 ssh-add &>/dev/null
-
-alias asml="source $HOME/envs/asml.env"
