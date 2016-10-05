@@ -29,7 +29,7 @@ To use this:
  3. Install Antigen
 
     ```
-    curl -L https://raw.githubusercontent.com/zsh-users/antigen/master/antigen.zsh > ~/.antigen.zsh
+    curl https://cdn.rawgit.com/zsh-users/antigen/v1.1.4/bin/antigen.zsh > antigen.zsh
     ```
     
  4. Install Autoenv
