@@ -44,6 +44,9 @@ Plugin 'vim-ruby/vim-ruby'
 " Pretty colours
 Plugin 'dracula/vim'
 
+" Elixir
+Plugin 'elixir-lang/vim-elixir'
+
 
 " Done, finish up Vundle
 call vundle#end()
