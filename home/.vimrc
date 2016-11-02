@@ -47,6 +47,9 @@ Plugin 'dracula/vim'
 " Elixir
 Plugin 'elixir-lang/vim-elixir'
 
+" Elm
+Plugin 'lambdatoast/elm.vim'
+
 
 " Done, finish up Vundle
 call vundle#end()
