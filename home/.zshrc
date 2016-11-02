@@ -90,6 +90,9 @@ alias h="hanami"
 alias hg="hanami generate"
 alias ha="hanami action"
 
+# tree
+alias t="tree --noreport -p -u -g -h --du -F -A -C"
+
 # Uncomment following line if you want red dots to bundlere displayed while waiting for completion
 COMPLETION_WAITING_DOTS="true"
 
