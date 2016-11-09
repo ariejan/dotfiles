@@ -1,13 +1,12 @@
 # Antigen
-source $HOME/.antigen.zsh
+source $HOME/bin/antigen.zsh
 
 antigen use oh-my-zsh
-antigen theme ariejan/dotfiles themes/af-magic-mod
+antigen theme ariejan/dotfiles data/themes/af-magic-mod
 
 antigen bundles <<EOBUNDLES
   bundler
   command-not-found
-  autoenv
   rbenv
   zsh-users/zsh-syntax-highlighting
   jimhester/per-directory-history
