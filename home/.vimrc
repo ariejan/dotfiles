@@ -263,9 +263,6 @@ endif
 " Configure vim-go
 let g:go_fmt_command = "goimports"
 
-" Configure copy/paste to system
-set clipboard=unnamed
-
 " Configure gist
 let g:gist_clip_command = 'pbcopy'
 let g:gist_detect_filetype = 1
