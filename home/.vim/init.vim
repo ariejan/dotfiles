@@ -1,1 +1,0 @@
-/Users/ariejan/.vimrc
