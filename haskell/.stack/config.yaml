@@ -1,0 +1,7 @@
+templates:
+  params:
+    author-email: ariejan@devroom.io
+    author-name: Ariejan de Vroom
+    github-username: ariejan
+    category: Web
+    copyright: 2016 Ariejan de Vroom
