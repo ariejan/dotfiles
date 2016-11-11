@@ -2,7 +2,7 @@
 source $HOME/bin/antigen.zsh
 
 antigen use oh-my-zsh
-# antigen theme nanotech
+antigen theme nanotech
 
 antigen bundles <<EOBUNDLES
   bundler
