@@ -43,7 +43,7 @@ Plugin 'fatih/vim-go'
 Plugin 'vim-ruby/vim-ruby'
 
 " Pretty colours
-Plugin 'ariejan/true-monochrome_vim'
+Plugin 'ariejan/vim-monochrome'
 
 " Elixir
 Plugin 'elixir-lang/vim-elixir'
@@ -96,7 +96,7 @@ syntax on
 set showmatch "matchin braces
 
 " colorscheme 
-colorscheme true-monochrome
+colorscheme monochrome
 let g:airline_theme='monochrome'
 
 " Replace Ruby 1.8 Hash syntax with 1.9 Hash syntax_
@@ -192,7 +192,7 @@ set statusline=%t%=%m\ %y\ [%c,%l]
 " imap ii <Esc>
 
 " Airline
-let g:airline_powerline_fonts=1
+let g:airline_powerline_fonts=0
 
 " Easy pasting, ripped from tpope/vim-unimpaired
 function! s:setup_paste() abort
