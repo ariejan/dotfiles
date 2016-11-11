@@ -16,6 +16,7 @@ Plugin 'kien/ctrlp.vim'
 
 " Bling
 Plugin 'bling/vim-airline'
+Plugin 'vim-airline/vim-airline-themes'
 
 " Useful helpers
 Plugin 'tomtom/tcomment_vim'
@@ -42,7 +43,7 @@ Plugin 'fatih/vim-go'
 Plugin 'vim-ruby/vim-ruby'
 
 " Pretty colours
-Plugin 'dracula/vim'
+Plugin 'ariejan/true-monochrome_vim'
 
 " Elixir
 Plugin 'elixir-lang/vim-elixir'
@@ -90,15 +91,13 @@ set lazyredraw
 " Disable audible bell
 set visualbell
 
-" Set 256 color support
-set t_Co=256
-
 " Syntax highlighting
 syntax on
 set showmatch "matchin braces
-set background=dark
 
-colorscheme dracula
+" colorscheme 
+colorscheme true-monochrome
+let g:airline_theme='monochrome'
 
 " Replace Ruby 1.8 Hash syntax with 1.9 Hash syntax_
 nmap <leader>rh :%s/\v:(\w+) \=\>/\1:/g<cr>_ 
