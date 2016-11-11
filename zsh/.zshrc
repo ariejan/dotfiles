@@ -2,7 +2,7 @@
 source $HOME/bin/antigen.zsh
 
 antigen use oh-my-zsh
-antigen theme ariejan/dotfiles data/themes/af-magic-mod
+# antigen theme nanotech
 
 antigen bundles <<EOBUNDLES
   bundler
@@ -29,6 +29,7 @@ export PATH="/usr/local/heroku/bin:$PATH"
 # Map vi to vim, just in case
 alias vi=vim
 alias :e=vim
+alias vim-bundle="vim +BundleInstall +qall"
 
 # Tmux
 alias tl="tmux list-sessions"
