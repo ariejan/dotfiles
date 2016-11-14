@@ -271,3 +271,6 @@ let g:gist_open_browser_after_post = 1
 " Explore
 map <leader>f :Explore<cr>
 let g:netrw_liststyle=3
+
+" Set short timeout, helps with vim-airline switching from INSERT mode
+set ttimeoutlen=10
