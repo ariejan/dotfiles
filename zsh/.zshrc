@@ -7,7 +7,6 @@ antigen theme nanotech
 antigen bundles <<EOBUNDLES
   bundler
   command-not-found
-  rbenv
   zsh-users/zsh-syntax-highlighting
   jimhester/per-directory-history
 EOBUNDLES
@@ -25,6 +24,9 @@ export PATH="$PATH:$GOPATH/bin"
 
 ### Added by the Heroku Toolbelt
 export PATH="/usr/local/heroku/bin:$PATH"
+
+# Load rbenv now, so $PATH is set correctly
+antigen bundle rbenv
 
 # Map vi to vim, just in case
 alias vi=vim
