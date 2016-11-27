@@ -43,7 +43,7 @@ Plugin 'fatih/vim-go'
 Plugin 'vim-ruby/vim-ruby'
 
 " Pretty colours
-Plugin 'ariejan/vim-monochrome'
+Plugin 'dracula/vim'
 
 " Elixir
 Plugin 'elixir-lang/vim-elixir'
@@ -96,8 +96,7 @@ syntax on
 set showmatch "matchin braces
 
 " colorscheme 
-colorscheme monochrome
-let g:airline_theme='monochrome'
+colorscheme dracula
 
 " Replace Ruby 1.8 Hash syntax with 1.9 Hash syntax_
 nmap <leader>rh :%s/\v:(\w+) \=\>/\1:/g<cr>_ 
