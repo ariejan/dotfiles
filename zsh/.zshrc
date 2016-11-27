@@ -31,6 +31,8 @@ alias vi=vim
 alias :e=vim
 alias vim-bundle="vim +BundleInstall +qall"
 
+alias cc="clear"
+
 # Tmux
 alias tl="tmux list-sessions"
 alias ta="tmux attach-session -t"
@@ -65,7 +67,7 @@ alias gba="git branch -a"
 alias gbd="git branch -D"
 alias gca="git commit --amend"
 alias gmc='git ls-files --unmerged | cut -f2 | uniq' # git merge conflicts
-alias glh="git lg | head -n 42"
+alias glh="git lg | head -n 20"
 alias grv="git remote -v"
 alias gfo="git fetch origin"
 alias gclr="git reset HEAD --hard ; git clean -fd"
