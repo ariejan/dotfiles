@@ -180,9 +180,6 @@ endfunction
 set sb
 set spr
 
-" Set a nice status line
-set statusline=%t%=%m\ %y\ [%c,%l]
-
 " Highlight anything in column > 80
 " highlight OverLength ctermbg=red ctermfg=white guibg=#592929
 " match OverLength /\%81v.\+/
@@ -191,7 +188,7 @@ set statusline=%t%=%m\ %y\ [%c,%l]
 " imap ii <Esc>
 
 " Airline
-let g:airline_powerline_fonts=0
+let g:airline_powerline_fonts=1
 
 " Easy pasting, ripped from tpope/vim-unimpaired
 function! s:setup_paste() abort
