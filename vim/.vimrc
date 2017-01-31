@@ -24,6 +24,7 @@ Plugin 'tpope/vim-endwise'
 Plugin 'tpope/vim-surround'
 Plugin 'align'
 Plugin 'tpope/vim-sleuth'
+Plugin 'godlygeek/tabular'
 
 " Git / Fugitive
 Plugin 'tpope/vim-fugitive'
@@ -41,6 +42,7 @@ Plugin 'fatih/vim-go'
 
 " Ruby etc.
 Plugin 'vim-ruby/vim-ruby'
+Plugin 'tpope/vim-cucumber'
 
 " Pretty colours
 Plugin 'dracula/vim'
@@ -270,3 +272,17 @@ let g:netrw_liststyle=3
 
 " Set short timeout, helps with vim-airline switching from INSERT mode
 set ttimeoutlen=10
+
+" Tabular alignment
+inoremap <silent> <Bar>   <Bar><Esc>:call <SID>align()<CR>a
+
+function! s:align()
+  let p = '^\s*|\s.*\s|\s*$'
+  if exists(':Tabularize') && getline('.') =~# '^\s*|' && (getline(line('.')-1) =~# p || getline(line('.')+1) =~# p)
+    let column = strlen(substitute(getline('.')[0:col('.')],'[^|]','','g'))
+    let position = strlen(matchstr(getline('.')[0:col('.')],'.*|\s*\zs.*'))
+    Tabularize/|/l1
+    normal! 0
+    call search(repeat('[^|]*|',column).'\s\{-\}'.repeat('.',position),'ce',line('.'))
+  endif
+endfunction
