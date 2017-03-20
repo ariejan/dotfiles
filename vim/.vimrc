@@ -46,6 +46,7 @@ Plugin 'tpope/vim-cucumber'
 
 " Pretty colours
 Plugin 'dracula/vim'
+Plugin 'morhetz/gruvbox'
 
 " Elixir
 Plugin 'elixir-lang/vim-elixir'
@@ -53,6 +54,9 @@ Plugin 'elixir-lang/vim-elixir'
 " Elm
 Plugin 'lambdatoast/elm.vim'
 
+" Syntastic
+Plugin 'vim-syntastic/syntastic'
+Plugin 'gcorne/vim-sass-lint'
 
 " Done, finish up Vundle
 call vundle#end()
@@ -98,7 +102,8 @@ syntax on
 set showmatch "matchin braces
 
 " colorscheme 
-colorscheme dracula
+let g:gruvbox_italic=1
+colorscheme gruvbox
 
 " Replace Ruby 1.8 Hash syntax with 1.9 Hash syntax_
 nmap <leader>rh :%s/\v:(\w+) \=\>/\1:/g<cr>_ 
@@ -265,6 +270,20 @@ let g:gist_clip_command = 'pbcopy'
 let g:gist_detect_filetype = 1
 let g:gist_post_private = 1
 let g:gist_open_browser_after_post = 1
+
+" Syntastic
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
+
+" Lint SCSS/SASS
+let g:syntastic_sass_checkers=["sasslint"]
+let g:syntastic_scss_checkers=["sasslint"]
 
 " Explore
 map <leader>f :Explore<cr>
